@@ -31,7 +31,7 @@ spec:
         tanzu.app.live.view: "true"
     spec:
       containers:
-      - image: registry.harbor.learn.tapsme.org/tap-build/workloads/demo/go-app-demo@sha256:f8be2d5100365d7520e583bf62042506d9d33a49a5ec58159badecb94b6fd7f2
+      - image: registry.harbor.learn.tapsme.org/tap-build/workloads/demo/go-app-demo@sha256:1046ea2fafee66e15501f49a3e3c9ad4af456f4b59bc7a23af223b3f9459dc2d
         name: workload
         resources: {}
         securityContext:
