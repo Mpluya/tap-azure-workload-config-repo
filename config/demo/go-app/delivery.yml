@@ -34,7 +34,7 @@ spec:
       - env:
         - name: TARGET
           value: Tanzu
-        image: registry.harbor.learn.tapsme.org/tap-build/workloads/demo/go-app-demo@sha256:7800aa9afaf41f32d11f91dea76ae313da6c25bdb39e93eabf194ec5bd2a8745
+        image: registry.harbor.learn.tapsme.org/tap-build/workloads/demo/go-app-demo@sha256:15a87bbf783da0171011afef129a7f3c2abde72809a8b5eaec14dbe4988316ad
         name: workload
         resources: {}
         securityContext:
