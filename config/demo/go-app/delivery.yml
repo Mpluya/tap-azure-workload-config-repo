@@ -31,7 +31,10 @@ spec:
         tanzu.app.live.view: "true"
     spec:
       containers:
-      - image: registry.harbor.learn.tapsme.org/tap-build/workloads/demo/go-app-demo@sha256:7800aa9afaf41f32d11f91dea76ae313da6c25bdb39e93eabf194ec5bd2a8745
+      - env:
+        - name: TARGET
+          value: Tanzu
+        image: registry.harbor.learn.tapsme.org/tap-build/workloads/demo/go-app-demo@sha256:7800aa9afaf41f32d11f91dea76ae313da6c25bdb39e93eabf194ec5bd2a8745
         name: workload
         resources: {}
         securityContext:
