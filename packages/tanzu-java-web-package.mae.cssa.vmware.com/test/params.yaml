@@ -6,7 +6,7 @@ metadata:
  namespace: mae
 stringData:
  values.yaml: |
-   ---
-   workload_name: tanzu-java-web-package
-   replicas: 2
-   hostname: run.cssa.tapsme.org
+    ---
+    workload_name: tanzu-java-web-package
+    replicas: 2
+    hostname: run.cssa.tapsme.org
