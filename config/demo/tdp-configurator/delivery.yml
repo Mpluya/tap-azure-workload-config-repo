@@ -27,7 +27,7 @@ spec:
         carto.run/workload-name: tdp-configurator
     spec:
       containers:
-      - image: registry.harbor.learn.tapsme.org/tap-build/workloads/demo/tdp-configurator-demo@sha256:ca186536428a5b98361b2bf784ff741c7761bf9c169d5caf3d1f40d8e4551bc9
+      - image: registry.harbor.learn.tapsme.org/tap-build/workloads/demo/tdp-configurator-demo@sha256:db612f749733032790c73eefe10ab17e0f8dc1356061a499e4f800dc37e05925
         name: workload
         resources: {}
         securityContext:
