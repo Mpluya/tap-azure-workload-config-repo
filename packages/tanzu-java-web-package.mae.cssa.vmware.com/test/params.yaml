@@ -9,4 +9,4 @@ stringData:
     ---
     workload_name: tanzu-java-web-package
     replicas: 2
-    hostname: run.cssa.tapsme.org
+    hostname: tanzu-java-web-package.run.cssa.tapsme.org
