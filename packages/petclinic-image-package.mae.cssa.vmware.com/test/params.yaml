@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+ name: petclinic-image-package-values
+ namespace: mae
+stringData:
+ values.yaml: |
+    ---
+    workload_name: petclinic-image-package
+    replicas: 2
+    hostname: petclinic-image-package.run.cssa.tapsme.org
