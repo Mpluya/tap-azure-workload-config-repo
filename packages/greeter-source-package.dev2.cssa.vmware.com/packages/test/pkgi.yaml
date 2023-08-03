@@ -7,9 +7,9 @@ metadata:
 spec:
  serviceAccountName: default # ServiceAccount on run cluster with permissions to deploy Package, see "Set up run Cluster Namespaces"
  packageRef:
-   refName: tanzu-java-web-package.mae.cssa.vmware.com # name of the Package
+   refName: greeter-source-package.dev2.cssa.vmware.com # name of the Package
    versionSelection:
-     constraints: 20230801192619.0.0 # version of the Package
+     constraints: 20230803185830.0.0 # version of the Package
  values:
  - secretRef:
      name: app-values
