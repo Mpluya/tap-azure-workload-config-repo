@@ -12,4 +12,4 @@ spec:
      constraints: 20230803185830.0.0 # version of the Package
  values:
  - secretRef:
-     name: greeter-source
+     name: greeter-source-values

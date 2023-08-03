@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
- name: greeter-source
+ name: greeter-source-values
  namespace: dev2
 stringData:
  values.yaml: |
