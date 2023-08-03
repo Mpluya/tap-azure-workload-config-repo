@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+ name: greeter-source
+ namespace: dev2
+stringData:
+ values.yaml: |
+    ---
+    workload_name: greeter-source-package

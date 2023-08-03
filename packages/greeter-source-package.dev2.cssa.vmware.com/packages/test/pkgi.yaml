@@ -2,8 +2,8 @@
 apiVersion: packaging.carvel.dev/v1alpha1
 kind: PackageInstall
 metadata:
- name: tanzu-java-web-package
- namespace: mae
+ name: greeter-source
+ namespace: dev2
 spec:
  serviceAccountName: default # ServiceAccount on run cluster with permissions to deploy Package, see "Set up run Cluster Namespaces"
  packageRef:

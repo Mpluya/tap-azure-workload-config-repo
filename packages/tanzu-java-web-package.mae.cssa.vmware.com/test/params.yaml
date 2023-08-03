@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
- name: app-values
+ name: tanzu-java-web-package
  namespace: mae
 stringData:
  values.yaml: |
