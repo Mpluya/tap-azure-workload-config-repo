@@ -2,7 +2,7 @@
 apiVersion: packaging.carvel.dev/v1alpha1
 kind: PackageInstall
 metadata:
-  name: greeter-source
+  name: green-greeter-source
   namespace: dev2
   annotations:
     ext.packaging.carvel.dev/ytt-paths-from-secret-name.0: green-overlay-secret
