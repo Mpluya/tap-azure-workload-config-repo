@@ -9,7 +9,7 @@ spec:
  packageRef:
    refName: petclinic-image-package.mae.cssa.vmware.com # name of the Package
    versionSelection:
-     constraints: "20230804133552" # version of the Package
+     constraints: "20230804133552.0.0" # version of the Package
  values:
  - secretRef:
      name: petclinic-image-package-values
