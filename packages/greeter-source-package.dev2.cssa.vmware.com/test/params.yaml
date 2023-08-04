@@ -8,3 +8,5 @@ stringData:
  values.yaml: |
     ---
     workload_name: greeter-source-package
+    replicas: 2
+    hostname: greeter-source-package.run.cssa.tapsme.org
