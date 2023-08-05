@@ -12,5 +12,9 @@ spec:
   - conditions:
     - prefix: /
     services:
+    - name: greeter-source-package-green
+      port: 8080
+      weight: 20
     - name: greeter-source-package
       port: 8080
+      weight: 20
