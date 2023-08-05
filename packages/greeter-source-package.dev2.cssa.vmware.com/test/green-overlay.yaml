@@ -26,5 +26,7 @@ stringData:
       name: greeter-source-package-green
 
     #@overlay/match by=overlay.and_op(ki, na)
-    #@overlay/remove
     ---
+    metadata:
+      #@overlay/replace
+      name: greeter-source-package-green
