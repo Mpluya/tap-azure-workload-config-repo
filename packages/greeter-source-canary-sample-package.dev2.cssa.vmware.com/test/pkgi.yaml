@@ -11,5 +11,5 @@ spec:
     versionSelection:
       constraints: 20230807204035.0.0 # version of the Package
   values:
-    - secretRef:
-        name: greeter-source-canary-sample-values
+  - secretRef:
+      name: greeter-source-canary-sample-values
