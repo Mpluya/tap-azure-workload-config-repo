@@ -9,7 +9,7 @@ spec:
   packageRef:
     refName: greeter-source-canary-sample-package.dev2.cssa.vmware.com
     versionSelection:
-      constraints: 20230807204035.0.0 # version of the Package
+      constraints: ">20230807204035.0.0"
   values:
   - secretRef:
       name: greeter-source-canary-sample-values
