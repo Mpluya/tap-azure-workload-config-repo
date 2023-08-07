@@ -2,11 +2,11 @@
 apiVersion: v1
 kind: Secret
 metadata:
- name: greeter-source-canary-sample-values
- namespace: dev2
+   name: greeter-source-canary-sample-values
+   namespace: dev2
 stringData:
- values.yaml: |
-    ---
-    workload_name:greeter-source-canary-sample-package
-    replicas: 2
-    hostname: greeter-source-canary-sample-package.run.cssa.tapsme.org
+   values.yaml: |
+      ---
+      workload_name: greeter-source-canary-sample-package
+      replicas: 2
+      hostname: greeter-source-canary-sample-package.run.cssa.tapsme.org
