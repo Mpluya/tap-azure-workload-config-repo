@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+ name: green-greeter-source-values
+ namespace: dev2
+stringData:
+ values.yaml: |
+    ---
+    workload_name: greeter-source-package
+    replicas: 2
+    hostname: greeter-source-package-green.run.cssa.tapsme.org

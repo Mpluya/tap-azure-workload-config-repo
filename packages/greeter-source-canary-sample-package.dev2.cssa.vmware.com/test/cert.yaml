@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: greeter-source
+  namespace: dev2
+spec:
+  dnsNames:
+  - greeter-source.run.cssa.tapsme.org
+  issuerRef:
+    group: cert-manager.io
+    kind: ClusterIssuer
+    name: letsencrypt-production
+  secretName: greeter-source
+  usages:
+  - digital signature
+  - key encipherment
