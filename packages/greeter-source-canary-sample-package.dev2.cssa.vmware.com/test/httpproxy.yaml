@@ -1,0 +1,13 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: greeter-source-canary-sample-package-canary
+  namespace: dev2
+spec:
+  virtualhost:
+    fqdn: greeter-source-canary-sample-package.run.cssa.tapsme.org
+  includes:
+  - name: greeter-source-canary-sample-package-canary
+    namespace: dev2
+    conditions:
+      - prefix: /
