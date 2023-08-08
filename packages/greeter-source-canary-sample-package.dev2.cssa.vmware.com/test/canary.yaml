@@ -57,7 +57,7 @@ spec:
         timeout: 30s
         metadata:
           type: bash
-          cmd: "curl -s http://greeter-source-canary-sample-package.dev2 | grep Greetings"
+          cmd: "curl -s http://greeter-source-canary-sample-package-canary.dev2 | grep Greetings"
       - name: load-test
         url: http://flagger-loadtester.test/
         type: rollout
