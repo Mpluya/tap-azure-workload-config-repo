@@ -8,5 +8,5 @@ stringData:
    values.yaml: |
       ---
       workload_name: greeter-source-canary-sample-package
-      replicas: 3
+      replicas: 1
       hostname: greeter-source-canary-sample-package.run.cssa.tapsme.org
