@@ -12,19 +12,19 @@ stringData:
     #@ ki = overlay.subset({"apiVersion":"networking.k8s.io/v1", "kind": "Ingress"})
     #@ na = overlay.subset({"metadata":{"name":"greeter-source-package-green"}})
 
-    #@overlay/match by=overlay.and_op(kd, na)
+    #@overlay/match by=overlay.and_op(kd, na), expects="0+"
     ---
     metadata:
       #@overlay/replace
       name: greeter-source-package
 
-    #@overlay/match by=overlay.and_op(ks, na)
+    #@overlay/match by=overlay.and_op(ks, na), expects="0+"
     ---
     metadata:
       #@overlay/replace
       name: greeter-source-package
 
-    #@overlay/match by=overlay.and_op(ki, na)
+    #@overlay/match by=overlay.and_op(ki, na), expects="0+"
     ---
     metadata:
       #@overlay/replace
