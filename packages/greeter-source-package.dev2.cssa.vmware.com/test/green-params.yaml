@@ -6,7 +6,7 @@ metadata:
  namespace: dev2
 stringData:
  values.yaml: |
-    ---
-    workload_name: greeter-source-package
-    replicas: 2
-    hostname: greeter-source-package-green.run.cssa.tapsme.org
+   ---
+   workload_name: greeter-source-package
+   replicas: 2
+   hostname: greeter-source-package-green.run.cssa.tapsme.org

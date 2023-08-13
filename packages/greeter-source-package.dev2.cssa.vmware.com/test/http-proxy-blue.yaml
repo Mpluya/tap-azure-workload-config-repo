@@ -17,4 +17,4 @@ spec:
       weight: 20
     - name: greeter-source-package
       port: 8080
-      weight: 20
+      weight: 80
