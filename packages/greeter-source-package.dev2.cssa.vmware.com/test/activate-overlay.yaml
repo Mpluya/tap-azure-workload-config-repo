@@ -7,7 +7,6 @@ metadata:
 stringData:
   custom-package-overlay.yaml: |
     #@ load("@ytt:overlay", "overlay")
-    #@ load("@ytt:data", "data")
 
     #@ kd = overlay.subset({"apiVersion":"apps/v1", "kind": "Deployment"})
     #@ ks = overlay.subset({"apiVersion":"v1", "kind": "Service"})
