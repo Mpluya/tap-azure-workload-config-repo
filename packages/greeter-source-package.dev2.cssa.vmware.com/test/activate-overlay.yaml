@@ -5,13 +5,13 @@ metadata:
   name: activate-overlay-secret
   namespace: dev2
 stringData:
-  custom-package-overlay.yaml: |
+  activate-overlay.yaml: |
     #@ load("@ytt:overlay", "overlay")
 
     #@ kd = overlay.subset({"apiVersion":"apps/v1", "kind": "Deployment"})
     #@ ks = overlay.subset({"apiVersion":"v1", "kind": "Service"})
     #@ ki = overlay.subset({"apiVersion":"networking.k8s.io/v1", "kind": "Ingress"})
-    #@ na = overlay.subset({"metadata":{"name": "greeter-source-package-green"}})
+    #@ na = overlay.subset({"metadata":{"name":"greeter-source-package-green"}})
 
     #@overlay/match by=overlay.and_op(kd, na)
     ---
@@ -30,3 +30,22 @@ stringData:
     metadata:
       #@overlay/replace
       name: greeter-source-package
+
+    ---
+    apiVersion: projectcontour.io/v1
+    kind: HTTPProxy
+    metadata:
+      name: blue
+      namespace: dev2
+    spec:
+      virtualhost:
+        fqdn: greeter-source.run.cssa.tapsme.org
+        tls:
+          secretName: greeter-source
+      routes:
+        - conditions:
+          - prefix: /
+          services:
+            - name: greeter-source-package
+              port: 8080
+              weight: 100
