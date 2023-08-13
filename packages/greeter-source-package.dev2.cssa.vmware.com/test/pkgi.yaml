@@ -2,8 +2,10 @@
 apiVersion: packaging.carvel.dev/v1alpha1
 kind: PackageInstall
 metadata:
- name: greeter-source
- namespace: dev2
+  name: greeter-source
+  namespace: dev2
+  annotations:
+    packaging.carvel.dev/downgradable: ""
 spec:
  serviceAccountName: default # ServiceAccount on run cluster with permissions to deploy Package, see "Set up run Cluster Namespaces"
  packageRef:
