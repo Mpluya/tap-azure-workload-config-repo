@@ -47,6 +47,6 @@ stringData:
         - conditions:
           - prefix: /
           services:
-            - name: greeter-source-package # note the name is changed back
+            - name: greeter-source-package #! note the name is changed back
               port: 8080
               weight: 100
