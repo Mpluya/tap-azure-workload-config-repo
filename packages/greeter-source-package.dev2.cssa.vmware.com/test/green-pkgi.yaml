@@ -4,6 +4,8 @@ kind: PackageInstall
 metadata:
   name: green-greeter-source
   namespace: dev2
+  annotations:
+    ext.packaging.carvel.dev/ytt-paths-from-secret-name.0: activate-overlay-secret
 spec:
   serviceAccountName: default
   packageRef:
