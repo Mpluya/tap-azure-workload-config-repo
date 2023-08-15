@@ -1,13 +1,13 @@
 apiVersion: projectcontour.io/v1
 kind: HTTPProxy
 metadata:
-  name: greeter-source-package
+  name: greeter-source
   namespace: dev2
 spec:
   virtualhost:
     fqdn: greeter-source.run.cssa.tapsme.org
     tls:
-      secretName: greeter-source-package
+      secretName: greeter-source
   routes:
   - conditions:
     - prefix: /
