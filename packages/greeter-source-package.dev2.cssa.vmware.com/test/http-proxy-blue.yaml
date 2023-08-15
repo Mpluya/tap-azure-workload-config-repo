@@ -7,7 +7,7 @@ spec:
   virtualhost:
     fqdn: greeter-source.run.cssa.tapsme.org
     tls:
-      secretName: greeter-source
+      secretName: greeter-source-package
   routes:
   - conditions:
     - prefix: /
