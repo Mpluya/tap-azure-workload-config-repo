@@ -1,7 +1,7 @@
 apiVersion: projectcontour.io/v1
 kind: HTTPProxy
 metadata:
-  name: blue
+  name: greeter-source-package
   namespace: dev2
 spec:
   virtualhost:

@@ -13,7 +13,7 @@ stringData:
     #@ na = overlay.subset({"metadata":{"name":"greeter-source-package-green"}})
 
     #@ hp = overlay.subset({"apiVersion":"projectcontour.io/v1", "kind": "HTTPProxy"})
-    #@ hpn = overlay.subset({"metadata":{"name":"blue"}})
+    #@ hpn = overlay.subset({"metadata":{"name":"greeter-source-package"}})
 
     #@overlay/match by=overlay.and_op(kd, na), expects="0+"
     ---
@@ -34,6 +34,7 @@ stringData:
       name: greeter-source-package
 
     #@overlay/match by=overlay.and_op(hp, hpn), expects="0+"
+    #@overlay/replace
     ---
     spec:
       routes:
