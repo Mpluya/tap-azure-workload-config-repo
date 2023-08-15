@@ -26,6 +26,12 @@ stringData:
       #@overlay/replace
       name: greeter-source-package
 
+    #@overlay/match by=overlay.and_op(ki, na), expects="0+"
+    ---
+    metadata:
+      #@overlay/replace
+      name: greeter-source-package
+
     #@overlay/match by=overlay.and_op(hp, hpn), expects="0+"
     #@overlay/replace
     ---
