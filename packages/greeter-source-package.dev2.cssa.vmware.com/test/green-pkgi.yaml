@@ -11,7 +11,7 @@ spec:
   packageRef:
     refName: greeter-source-package.dev2.cssa.vmware.com
     versionSelection:
-      constraints: ">20230812200758.0.0"
+      constraints: ">20230815145736.0.0"
   values:
   - secretRef:
       name: green-greeter-source-values
