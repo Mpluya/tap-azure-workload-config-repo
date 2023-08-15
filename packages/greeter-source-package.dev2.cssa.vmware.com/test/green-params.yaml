@@ -9,4 +9,3 @@ stringData:
    ---
    workload_name: greeter-source-package
    replicas: 2
-   hostname: greeter-source-package-green.run.cssa.tapsme.org
