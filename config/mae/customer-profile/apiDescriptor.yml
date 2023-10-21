@@ -19,9 +19,8 @@ spec:
   system: tanzu-gtt
   owner: team-awesome
   location:
-    apiSpec:
-      path: /api-docs
-    server:
+    path: /api-docs
+    baseURL:
       ref:
         apiVersion: serving.knative.dev/v1
         kind: Service
