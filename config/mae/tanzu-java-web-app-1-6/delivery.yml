@@ -46,16 +46,6 @@ spec:
         tanzu.app.live.view.application.flavours: spring-boot
         tanzu.app.live.view.application.name: tanzu-java-web-app-1-6
     spec:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: topology.kubernetes.io/zone
-                operator: In
-                values:
-                - joe
-                - jeremy
       containers:
       - env:
         - name: JAVA_TOOL_OPTIONS
@@ -84,8 +74,4 @@ spec:
             port: 8080
             scheme: HTTP
       serviceAccountName: default
-      tolerations:
-      - effect: NoSchedule
-        key: test
-        operator: Exists
 
