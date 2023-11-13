@@ -60,7 +60,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: registry.harbor.learn.tapsme.org/tap-build/workloads/mae/tanzu-java-web-app-1-6-mae@sha256:f51b4afaa112f4f850a64f3baca8b93bb065a348f0427660c6d817c65a1761de
+        image: registry.harbor.learn.tapsme.org/tap-build/workloads/tanzu-java-web-app-1-6-mae@sha256:e5a0f23aec33f9d02e77e6cde5e6654dccf94fdbb79260d7a584a0ff56132f1d
         livenessProbe:
           httpGet:
             path: /livez
@@ -78,6 +78,11 @@ spec:
         resources: {}
         securityContext:
           runAsUser: 1000
+        startupProbe:
+          httpGet:
+            path: /readyz
+            port: 8080
+            scheme: HTTP
       serviceAccountName: default
       tolerations:
       - effect: NoSchedule
