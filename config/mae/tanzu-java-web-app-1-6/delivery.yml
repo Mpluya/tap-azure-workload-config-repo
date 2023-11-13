@@ -74,8 +74,3 @@ spec:
             port: 8080
             scheme: HTTP
       serviceAccountName: default
-      tolerations:
-      - effect: NoSchedule
-        key: test
-        operator: Exists
-
