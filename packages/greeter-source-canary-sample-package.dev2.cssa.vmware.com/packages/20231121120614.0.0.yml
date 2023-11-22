@@ -1,17 +1,17 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: greeter-source-canary-sample-package.dev2.cssa.vmware.com.20230815010533.0.0
+  name: greeter-source-canary-sample-package.dev2.cssa.vmware.com.20231121120614.0.0
 spec:
   refName: greeter-source-canary-sample-package.dev2.cssa.vmware.com
-  version: 20230815010533.0.0
+  version: 20231121120614.0.0
   releaseNotes: |
-    Release v20230815010533.0.0 of package greeter-source-canary-sample-package.dev2.cssa.vmware.com
+    Release v20231121120614.0.0 of package greeter-source-canary-sample-package.dev2.cssa.vmware.com
   template:
     spec:
       fetch:
       - imgpkgBundle:
-          image: registry.harbor.learn.tapsme.org/tap-build/workloads/greeter-source-canary-sample-package-dev2-bundle@sha256:2256511ef35a463d5456d7395d295e74e6ce1beeb78d3f453cb76fc834c2456a
+          image: registry.harbor.learn.tapsme.org/tap-build/workloads/greeter-source-canary-sample-package-dev2-bundle@sha256:64bc732691fdd0482e30eba24ef538630b00c0b986e4d5a415770d507b5e81df
       template:
       - ytt:
           paths:
