@@ -16,6 +16,7 @@ spec:
   template:
     metadata:
       annotations:
+        apps.tanzu.vmware.com/correlationid: ssh://git@github.com/sample-accelerators/tanzu-java-web-app?sub_path=/
         boot.spring.io/version: 2.7.3
         conventions.carto.run/applied-conventions: |-
           appliveview-sample/app-live-view-appflavour-check
