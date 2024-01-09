@@ -17,6 +17,7 @@ spec:
     metadata:
       annotations:
         apps.tanzu.vmware.com/correlationid: https://github.com/carto-run/app-golang-kaniko?sub_path=/
+        autoscaling.knative.dev/minScale: "1"
         conventions.carto.run/applied-conventions: |-
           appliveview-sample/app-live-view-appflavour-check
           spring-boot-convention/auto-configure-actuators-check
@@ -30,7 +31,7 @@ spec:
         carto.run/workload-name: app-golang-kaniko
     spec:
       containers:
-      - image: cxscssa.azurecr.io/tap-build/workloads/app-golang-kaniko-jeremy@sha256:23e9e94a22e0c273c562e53c2eabb6d2e149e3486f2fc6329c16aa8c5af86e5e
+      - image: cxscssa.azurecr.io/tap-build/workloads/app-golang-kaniko-jeremy@sha256:170eea8930587ab84605268eeeffddd309f4e9c9a029c677b6d0943b5645c43f
         name: workload
         resources: {}
         securityContext:
