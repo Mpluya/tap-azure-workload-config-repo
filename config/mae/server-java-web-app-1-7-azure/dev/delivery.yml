@@ -7,6 +7,7 @@ metadata:
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
     kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
   labels:
+    app.kubernetes.io/name: server-java-web-app-1-7-azure
     app.kubernetes.io/part-of: server-java-web-app-1-7-azure
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     apps.tanzu.vmware.com/has-tests: "true"
@@ -16,6 +17,7 @@ metadata:
 spec:
   selector:
     matchLabels:
+      app.kubernetes.io/name: server-java-web-app-1-7-azure
       app.kubernetes.io/component: run
       app.kubernetes.io/part-of: server-java-web-app-1-7-azure
       apps.tanzu.vmware.com/auto-configure-actuators: "true"
@@ -48,6 +50,7 @@ spec:
           spring-boot-convention/app-live-view-appflavours-boot
         developer.conventions/target-containers: workload
       labels:
+        app.kubernetes.io/name: server-java-web-app-1-7-azure
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: server-java-web-app-1-7-azure
         apps.tanzu.vmware.com/auto-configure-actuators: "true"
@@ -95,6 +98,7 @@ kind: Service
 metadata:
   name: server-java-web-app-1-7-azure
   labels:
+    app.kubernetes.io/name: server-java-web-app-1-7-azure
     app.kubernetes.io/part-of: server-java-web-app-1-7-azure
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     apps.tanzu.vmware.com/has-tests: "true"
@@ -103,6 +107,7 @@ metadata:
     carto.run/workload-name: server-java-web-app-1-7-azure
 spec:
   selector:
+    app.kubernetes.io/name: server-java-web-app-1-7-azure
     app.kubernetes.io/component: run
     app.kubernetes.io/part-of: server-java-web-app-1-7-azure
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
