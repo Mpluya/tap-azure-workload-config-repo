@@ -7,7 +7,6 @@ metadata:
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
     kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
   labels:
-    app.kubernetes.io/name: server-java-web-app-1-7-azure
     app.kubernetes.io/part-of: server-java-web-app-1-7-azure
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     apps.tanzu.vmware.com/has-tests: "true"
@@ -17,7 +16,6 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/name: server-java-web-app-1-7-azure
       app.kubernetes.io/component: run
       app.kubernetes.io/part-of: server-java-web-app-1-7-azure
       apps.tanzu.vmware.com/auto-configure-actuators: "true"
@@ -50,7 +48,6 @@ spec:
           spring-boot-convention/app-live-view-appflavours-boot
         developer.conventions/target-containers: workload
       labels:
-        app.kubernetes.io/name: server-java-web-app-1-7-azure
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: server-java-web-app-1-7-azure
         apps.tanzu.vmware.com/auto-configure-actuators: "true"
@@ -68,7 +65,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: cxscssa.azurecr.io/tap-build/workloads/server-java-web-app-1-7-azure-mae@sha256:36cb5435cf45ca0ffe231ba03f115a4b83f39f7c713ad95514891f00435f2169
+        image: cxscssa.azurecr.io/tap-build/workloads/server-java-web-app-1-7-azure-mae@sha256:f8075e7619d55fbaa0c2d7cad079fc8435459f70b667ae210ed62a5b681eb48b
         livenessProbe:
           httpGet:
             path: /livez
@@ -98,7 +95,6 @@ kind: Service
 metadata:
   name: server-java-web-app-1-7-azure
   labels:
-    app.kubernetes.io/name: server-java-web-app-1-7-azure
     app.kubernetes.io/part-of: server-java-web-app-1-7-azure
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     apps.tanzu.vmware.com/has-tests: "true"
@@ -107,7 +103,6 @@ metadata:
     carto.run/workload-name: server-java-web-app-1-7-azure
 spec:
   selector:
-    app.kubernetes.io/name: server-java-web-app-1-7-azure
     app.kubernetes.io/component: run
     app.kubernetes.io/part-of: server-java-web-app-1-7-azure
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
