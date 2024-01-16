@@ -31,7 +31,7 @@ spec:
         carto.run/workload-name: app-golang-kaniko
     spec:
       containers:
-      - image: cxscssa.azurecr.io/tap-build/workloads/app-golang-kaniko-mae@sha256:b68566e60b5c44ae6da1d20a332e1d58f1d785ddd166a7cd1c6e53f04fec4875
+      - image: cxscssa.azurecr.io/tap-build/workloads/app-golang-kaniko-mae@sha256:967729e2ef4c784f19e5fb4fe544d3a1caa47915b26a1129f7877e758adfe5e6
         name: workload
         resources: {}
         securityContext:
