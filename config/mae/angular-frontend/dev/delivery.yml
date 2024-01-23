@@ -32,7 +32,7 @@ spec:
       - env:
         - name: api_backend
           value: http://java-rest-service-azure.mae.svc
-        image: cxscssa.azurecr.io/tap-build/workloads/angular-frontend-mae@sha256:88c266fe041c78eedb14dda5542d093b68221ca08f72cad9218ee6e441638a3a
+        image: cxscssa.azurecr.io/tap-build/workloads/angular-frontend-mae@sha256:c5befbd60f1899bb0d6181756a8cf766afeeec2536ffbc86a20f69c701c40890
         name: workload
         resources: {}
         securityContext:
