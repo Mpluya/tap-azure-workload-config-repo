@@ -35,7 +35,7 @@ spec:
     maxWeight: 50
     # canary increment step
     # percentage (0-100)
-    stepWeight: 5
+    stepWeight: 25
     # Contour Prometheus checks
     metrics:
       - name: request-success-rate
