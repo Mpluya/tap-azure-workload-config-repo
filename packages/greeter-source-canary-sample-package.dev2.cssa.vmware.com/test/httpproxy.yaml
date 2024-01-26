@@ -7,7 +7,7 @@ spec:
   virtualhost:
     fqdn: greeter-source-canary-sample-package.run.cssa.tapsme.org
     tls:
-      secretName: greeter-source-canary-sample-package
+      secretName: greeter-source
   includes:
   - name: canary
     namespace: dev2
