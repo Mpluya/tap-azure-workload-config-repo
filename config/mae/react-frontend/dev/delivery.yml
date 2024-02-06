@@ -29,7 +29,7 @@ spec:
         carto.run/workload-name: react-frontend
     spec:
       containers:
-      - image: cxscssa.azurecr.io/tap-build/workloads/react-frontend-mae@sha256:a67d5acc87ed8f6783a8997e64cfcd93867a6bae2d8d98fe43c76045c679d58b
+      - image: cxscssa.azurecr.io/tap-build/workloads/react-frontend-mae@sha256:c07a33f6321380e881a205e56d9a545d1d14f9d32ec572f953b7c89a8678fa40
         name: workload
         resources: {}
         securityContext:
