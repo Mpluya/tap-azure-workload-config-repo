@@ -31,7 +31,13 @@ spec:
       containers:
       - image: cxscssa.azurecr.io/tap-build/workloads/react-frontend-mae@sha256:c07a33f6321380e881a205e56d9a545d1d14f9d32ec572f953b7c89a8678fa40
         name: workload
-        resources: {}
+        resources:
+          limits:
+            cpu: 1500m
+            memory: 750M
+          requests:
+            cpu: 100m
+            memory: 500M
         securityContext:
           runAsUser: 1000
       serviceAccountName: default
