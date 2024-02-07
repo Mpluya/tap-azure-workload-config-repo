@@ -35,7 +35,7 @@ spec:
       - env:
         - name: TARGET
           value: Tanzu
-        image: cxscssa.azurecr.io/tap-build/workloads/go-app-demo@sha256:d3a520b0c4c84795c4588c47ce52617d86d85a102674de3f0a46e18cfc8a0d37
+        image: cxscssa.azurecr.io/tap-build/workloads/go-app-demo@sha256:a11b608070875c75756fc7fef974fa61b44e2b85be8f044394c520e4d8a2abb0
         name: workload
         resources: {}
         securityContext:
