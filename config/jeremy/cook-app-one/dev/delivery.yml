@@ -1,26 +1,23 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: tanzu-java-web-app-1-7-azure
+  name: cook-app-one
   annotations:
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
     ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
     kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
   labels:
-    app.kubernetes.io/part-of: tanzu-java-web-app-1-7-azure
-    apps.tanzu.vmware.com/auto-configure-actuators: "true"
-    apps.tanzu.vmware.com/has-tests: "true"
+    app.kubernetes.io/part-of: cook-app-one
     apps.tanzu.vmware.com/workload-type: web
     app.kubernetes.io/component: run
-    carto.run/workload-name: tanzu-java-web-app-1-7-azure
+    carto.run/workload-name: cook-app-one
 spec:
   template:
     metadata:
       annotations:
-        apps.tanzu.vmware.com/correlationid: ssh://git@github.com/Mpluya/tanzu-java-web-app-1.7?sub_path=/
+        apps.tanzu.vmware.com/correlationid: ssh://git@github.com/x95castle1/cook-app-one?sub_path=/
         autoscaling.knative.dev/minScale: "1"
-        boot.spring.io/actuator: http://:8081/actuator
-        boot.spring.io/version: 3.1.3
+        boot.spring.io/version: 3.0.1
         conventions.carto.run/applied-conventions: |-
           appliveview-sample/app-live-view-appflavour-check
           spring-boot-convention/auto-configure-actuators-check
@@ -35,23 +32,28 @@ spec:
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
-        app.kubernetes.io/part-of: tanzu-java-web-app-1-7-azure
-        apps.tanzu.vmware.com/auto-configure-actuators: "true"
-        apps.tanzu.vmware.com/has-tests: "true"
+        app.kubernetes.io/part-of: cook-app-one
+        apps.tanzu.vmware.com/auto-configure-actuators: "false"
         apps.tanzu.vmware.com/workload-type: web
-        carto.run/workload-name: tanzu-java-web-app-1-7-azure
+        carto.run/workload-name: cook-app-one
         conventions.carto.run/framework: spring-boot
         tanzu.app.live.view: "true"
         tanzu.app.live.view.application.actuator.path: actuator
-        tanzu.app.live.view.application.actuator.port: "8081"
+        tanzu.app.live.view.application.actuator.port: "8080"
         tanzu.app.live.view.application.flavours: spring-boot
-        tanzu.app.live.view.application.name: tanzu-java-web-app-1-7-azure
+        tanzu.app.live.view.application.name: cook-app-one
     spec:
       containers:
       - env:
+        - name: SPRING_CONFIG_IMPORT
+          value: optional:configtree:${SERVICE_BINDING_ROOT}/spring-properties/
+        - name: SPRING_CLOUD_CONFIG_ENABLED
+          value: "false"
+        - name: SPRING_PROFILES_ACTIVE
+          value: stg
         - name: JAVA_TOOL_OPTIONS
-          value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: cxscssa.azurecr.io/tap-build/workloads/tanzu-java-web-app-1-7-azure-mae@sha256:11702df3f9048ae7b985d4e3796dc9430ea36e1efaba53c5e6044a5e523abfcf
+          value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.health.probes.enabled="true" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
+        image: cxscssa.azurecr.io/tap-build/workloads/cook-app-one-jeremy@sha256:66b93226d54d1b92f34d16f255f8a646626d616e196f4681cb9f46777aabf89d
         livenessProbe:
           httpGet:
             path: /livez

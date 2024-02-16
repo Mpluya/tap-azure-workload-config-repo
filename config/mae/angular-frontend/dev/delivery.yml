@@ -29,7 +29,10 @@ spec:
         carto.run/workload-name: angular-frontend
     spec:
       containers:
-      - image: cxscssa.azurecr.io/tap-build/workloads/angular-frontend-mae@sha256:f5d3db322f19b0f54ec62d82713a537a1b26c48709f59c36728acb0e1da6a1d5
+      - env:
+        - name: backend_service_url
+          value: http://java-rest-service-azure.mae.svc
+        image: cxscssa.azurecr.io/tap-build/workloads/angular-frontend-mae@sha256:5bd919bf971e7ffe8855461f52f8c798dab72b7a8943a40302be7e5d6757893e
         name: workload
         resources: {}
         securityContext:
