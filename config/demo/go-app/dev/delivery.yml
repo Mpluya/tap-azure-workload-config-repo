@@ -19,8 +19,8 @@ spec:
       annotations:
         apps.tanzu.vmware.com/correlationid: ssh://git@github.com/Mpluya/tap-workload-go?sub_path=/
         conventions.carto.run/applied-conventions: |-
-          appliveview-sample/app-live-view-appflavour-check
           spring-boot-convention/auto-configure-actuators-check
+          spring-boot-convention/is-native-app-check
           spring-boot-convention/app-live-view-appflavour-check
         developer.conventions/target-containers: workload
       labels:
