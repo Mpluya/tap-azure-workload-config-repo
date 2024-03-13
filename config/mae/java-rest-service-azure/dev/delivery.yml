@@ -38,7 +38,7 @@ spec:
       labels:
         apis.apps.tanzu.vmware.com/register-api: "true"
         app.kubernetes.io/component: run
-        app.kubernetes.io/part-of: java-rest-service-azure
+        app.kubernetes.io/part-of: customer-profile
         apps.tanzu.vmware.com/auto-configure-actuators: "true"
         apps.tanzu.vmware.com/workload-type: web
         carto.run/workload-name: java-rest-service-azure
