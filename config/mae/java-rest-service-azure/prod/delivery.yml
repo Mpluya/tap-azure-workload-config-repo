@@ -8,7 +8,7 @@ metadata:
     kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
   labels:
     apis.apps.tanzu.vmware.com/register-api: "true"
-    app.kubernetes.io/part-of: java-rest-service-azure
+    app.kubernetes.io/part-of: customer-profile
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     apps.tanzu.vmware.com/workload-type: web
     app.kubernetes.io/component: run
@@ -38,7 +38,7 @@ spec:
       labels:
         apis.apps.tanzu.vmware.com/register-api: "true"
         app.kubernetes.io/component: run
-        app.kubernetes.io/part-of: java-rest-service-azure
+        app.kubernetes.io/part-of: customer-profile
         apps.tanzu.vmware.com/auto-configure-actuators: "true"
         apps.tanzu.vmware.com/workload-type: web
         carto.run/workload-name: java-rest-service-azure
@@ -54,7 +54,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: cxscssa.azurecr.io/tap-build/workloads/java-rest-service-azure-mae@sha256:58eb6f07ec6237b208862b8998684cacde71953c2a3300007a0118db3b1787fe
+        image: cxscssa.azurecr.io/tap-build/workloads/java-rest-service-azure-mae@sha256:3f8b95bae50abd486152b7f649e1fe0dcf8caa911f01280aaa664673ea7fc3f4
         livenessProbe:
           httpGet:
             path: /livez
