@@ -54,7 +54,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: cxscssa.azurecr.io/tap-build/workloads/java-rest-service-azure-mae@sha256:3f8b95bae50abd486152b7f649e1fe0dcf8caa911f01280aaa664673ea7fc3f4
+        image: cxscssa.azurecr.io/tap-build/workloads/java-rest-service-azure-mae@sha256:58644d28138d87b701891b6f98598d17b9632a45eb0d832911fb2f5297f7eb2b
         livenessProbe:
           httpGet:
             path: /livez
