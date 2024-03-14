@@ -8,9 +8,10 @@ metadata:
     kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
   labels:
     apis.apps.tanzu.vmware.com/register-api: "true"
-    app.kubernetes.io/part-of: customer-profile
+    app.kubernetes.io/part-of: java-rest-service-azure
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     apps.tanzu.vmware.com/workload-type: web
+    backstage.io/kubernetes-id: customer-profile
     app.kubernetes.io/component: run
     carto.run/workload-name: java-rest-service-azure
 spec:
@@ -38,9 +39,10 @@ spec:
       labels:
         apis.apps.tanzu.vmware.com/register-api: "true"
         app.kubernetes.io/component: run
-        app.kubernetes.io/part-of: customer-profile
+        app.kubernetes.io/part-of: java-rest-service-azure
         apps.tanzu.vmware.com/auto-configure-actuators: "true"
         apps.tanzu.vmware.com/workload-type: web
+        backstage.io/kubernetes-id: customer-profile
         carto.run/workload-name: java-rest-service-azure
         conventions.carto.run/framework: spring-boot
         services.conventions.carto.run/postgres: workload
@@ -54,7 +56,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: cxscssa.azurecr.io/tap-build/workloads/java-rest-service-azure-mae@sha256:3f8b95bae50abd486152b7f649e1fe0dcf8caa911f01280aaa664673ea7fc3f4
+        image: cxscssa.azurecr.io/tap-build/workloads/java-rest-service-azure-mae@sha256:16b312960ce27ea6946957ab5eb7ca0af8d1b26a0c31566e1085b16cd47e4578
         livenessProbe:
           httpGet:
             path: /livez

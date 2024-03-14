@@ -22,9 +22,10 @@ metadata:
     kapp.k14s.io/change-group: servicebinding.io/ServiceBindings
   labels:
     apis.apps.tanzu.vmware.com/register-api: "true"
-    app.kubernetes.io/part-of: customer-profile
+    app.kubernetes.io/part-of: java-rest-service-azure
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     apps.tanzu.vmware.com/workload-type: web
+    backstage.io/kubernetes-id: customer-profile
     app.kubernetes.io/component: run
     carto.run/workload-name: java-rest-service-azure
 spec:
