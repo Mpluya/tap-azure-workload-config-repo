@@ -9,6 +9,7 @@ metadata:
   labels:
     app.kubernetes.io/part-of: react-frontend
     apps.tanzu.vmware.com/workload-type: web
+    backstage.io/kubernetes-id: react-frontend
     app.kubernetes.io/component: run
     carto.run/workload-name: react-frontend
 spec:
