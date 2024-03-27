@@ -6,7 +6,7 @@ spec:
   packageRef:
     refName: tanzu-java-web-app.pve.vmware.com
     versionSelection:
-      constraints: 20240327122606.0.0
+      constraints: 20240327122748.0.0
       prereleases: {}
   serviceAccountName: default
   values:
