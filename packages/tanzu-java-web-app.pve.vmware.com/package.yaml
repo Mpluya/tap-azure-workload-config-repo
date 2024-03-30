@@ -1,17 +1,17 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: tanzu-java-web-app.pve.vmware.com.20240329221945.0.0
+  name: tanzu-java-web-app.pve.vmware.com.20240330124719.0.0
 spec:
   refName: tanzu-java-web-app.pve.vmware.com
-  version: 20240329221945.0.0
+  version: 20240330124719.0.0
   releaseNotes: |
-    Release v20240329221945.0.0 of package tanzu-java-web-app.pve.vmware.com
+    Release v20240330124719.0.0 of package tanzu-java-web-app.pve.vmware.com
   template:
     spec:
       fetch:
       - imgpkgBundle:
-          image: cxscssa.azurecr.io/tap-build/workloads/tanzu-java-web-app-bundle@sha256:5909fd632b74e7d8d90b4eda0cdb293d1a33058dad7cceef9eebdc1c6dd03b35
+          image: cxscssa.azurecr.io/tap-build/workloads/tanzu-java-web-app-bundle@sha256:57e15efc795155f289c80a38dcaaa549073c925ccb8b2ea6498609fe7fd6818d
       template:
       - ytt:
           paths:
