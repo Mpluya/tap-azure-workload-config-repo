@@ -1,6 +1,6 @@
 ---
 apiVersion: imgpkg.carvel.dev/v1alpha1
 bundle:
-  image: cxscssa.azurecr.io/tap-build/workloads/tanzu-java-web-app-bundle@sha256:e636f58d36cd7a2aed62797096f6c0819f45e3aac7c2ef7e0fc4e20562ffff67
+  image: cxscssa.azurecr.io/tap-build/workloads/tanzu-java-statefulset-app-bundle@sha256:cb26887a8e531d3054d018d4405d23211d961569b50127f3960be2d463c5ac23
   tag: latest
 kind: BundleLock

@@ -1,0 +1,14 @@
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: tanzu-java-statefulset-app.pve.vmware.com-pkgi
+spec:
+  packageRef:
+    refName: tanzu-java-statefulset-app.pve.vmware.com
+    versionSelection:
+      constraints: 20240410015310.0.0+build.40b72170d6f12d508741276c138bb85065adfc95
+      prereleases: {}
+  serviceAccountName: default
+  values:
+  - secretRef:
+      name: tanzu-java-statefulset-app

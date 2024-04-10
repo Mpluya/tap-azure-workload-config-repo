@@ -1,0 +1,24 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: tanzu-java-statefulset-app.pve.vmware.com.20240410015310.0.0+build.40b72170d6f12d508741276c138bb85065adfc95
+spec:
+  refName: tanzu-java-statefulset-app.pve.vmware.com
+  version: 20240410015310.0.0+build.40b72170d6f12d508741276c138bb85065adfc95
+  releaseNotes: |
+    Release v20240410015310.0.0+build.40b72170d6f12d508741276c138bb85065adfc95 of package tanzu-java-statefulset-app.pve.vmware.com
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: cxscssa.azurecr.io/tap-build/workloads/tanzu-java-statefulset-app-bundle@sha256:cb26887a8e531d3054d018d4405d23211d961569b50127f3960be2d463c5ac23
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
