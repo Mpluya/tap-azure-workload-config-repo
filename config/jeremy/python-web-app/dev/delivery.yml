@@ -31,7 +31,7 @@ spec:
         carto.run/workload-name: python-web-app
     spec:
       containers:
-      - image: cxscssa.azurecr.io/tap-build/workloads/python-web-app-jeremy@sha256:84d816ad22910f8b65f28aa638acc53dc4a62d6a650033466ed58918162b6d9d
+      - image: cxscssa.azurecr.io/tap-build/workloads/python-web-app-jeremy@sha256:87f167b1e04cc372a78192790f146e5129f3de344ef7aad5c0b81c5f5aedc61a
         name: workload
         resources: {}
         securityContext:
