@@ -1,12 +1,12 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: tanzu-java-statefulset-app.pve.vmware.com.20240411142614.0.0+build.40b72170d6f12d508741276c138bb85065adfc95
+  name: tanzu-java-statefulset-app.pve.vmware.com.20240419192905.0.0+build.40b72170d6f12d508741276c138bb85065adfc95
 spec:
   refName: tanzu-java-statefulset-app.pve.vmware.com
-  version: 20240411142614.0.0+build.40b72170d6f12d508741276c138bb85065adfc95
+  version: 20240419192905.0.0+build.40b72170d6f12d508741276c138bb85065adfc95
   releaseNotes: |
-    Release v20240411142614.0.0+build.40b72170d6f12d508741276c138bb85065adfc95 of package tanzu-java-statefulset-app.pve.vmware.com
+    Release v20240419192905.0.0+build.40b72170d6f12d508741276c138bb85065adfc95 of package tanzu-java-statefulset-app.pve.vmware.com
   template:
     spec:
       fetch:
