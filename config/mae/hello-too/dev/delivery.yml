@@ -52,7 +52,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: cxscssa.azurecr.io/tap-build/workloads/hello-too-mae@sha256:8d8c3b7e32f9827ab435256c7a26d19c388d8015e248720fb4f02662a5de0d37
+        image: cxscssa.azurecr.io/tap-build/workloads/hello-too-mae@sha256:d033dca473e42b8c8e6ec7767339c34afedc2307d996d8d58a06c6743aadf4b6
         livenessProbe:
           httpGet:
             path: /livez
