@@ -37,6 +37,7 @@ spec:
           spring-boot-convention/app-live-view-appflavours-boot
         developer.conventions/target-containers: workload
       labels:
+        aggregate-name: hello-system
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: hello-too
         apps.tanzu.vmware.com/auto-configure-actuators: "true"
