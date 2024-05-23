@@ -41,6 +41,7 @@ spec:
         apps.tanzu.vmware.com/auto-configure-actuators: "true"
         apps.tanzu.vmware.com/has-tests: "true"
         apps.tanzu.vmware.com/workload-type: web
+        backstage.io/kubernetes-id: hello-system
         carto.run/workload-name: hello
         conventions.carto.run/framework: spring-boot
         tanzu.app.live.view: "true"
