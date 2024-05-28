@@ -9,3 +9,4 @@ stringData:
       ---
       workload_name: greeter-source-canary-sample-package
       replicas: 3
+      cluster_issuer: letsencrypt-production
