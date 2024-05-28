@@ -14,4 +14,4 @@ spec:
   - secretRef:
       name: ingress-values
   - secretRef:
-      name: greeter-source-canary-sample-values
+      name: app-values
