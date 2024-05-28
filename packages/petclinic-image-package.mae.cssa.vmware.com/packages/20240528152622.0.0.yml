@@ -1,0 +1,70 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: petclinic-image-package.mae.cssa.vmware.com.20240528152622.0.0
+spec:
+  refName: petclinic-image-package.mae.cssa.vmware.com
+  version: 20240528152622.0.0
+  releaseNotes: |
+    Release v20240528152622.0.0 of package petclinic-image-package.mae.cssa.vmware.com
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: cxscssa.azurecr.io/tap-build/workloads/petclinic-image-package-mae-bundle@sha256:9788ca14011019ec299b5d93668473cdfeb3b4a125d9a76214721bfbf08a323a
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
+  valuesSchema:
+    openAPIv3:
+      type: object
+      additionalProperties: false
+      properties:
+        workload_name:
+          title: Workload name
+          type: string
+          default: ""
+        replicas:
+          title: Replicas
+          type: integer
+          default: 1
+        port:
+          title: Port
+          type: integer
+          default: 8080
+        hostname:
+          title: Hostname
+          type: string
+          default: ""
+        cluster_issuer:
+          title: Cluster Issuer
+          type: string
+          default: letsencrypt-production
+        http_route:
+          type: object
+          additionalProperties: false
+          nullable: true
+          properties:
+            gateways:
+              type: array
+              items:
+                type: object
+                additionalProperties: false
+                properties:
+                  protocol:
+                    type: string
+                    default: ""
+                  name:
+                    type: string
+                    default: ""
+              default:
+              - protocol: https
+                name: default-gateway
+
