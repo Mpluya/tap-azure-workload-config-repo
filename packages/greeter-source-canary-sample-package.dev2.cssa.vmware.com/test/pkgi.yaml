@@ -12,4 +12,6 @@ spec:
       constraints: ">20230812172839.0.0"
   values:
   - secretRef:
+      name: ingress-values
+  - secretRef:
       name: greeter-source-canary-sample-values
