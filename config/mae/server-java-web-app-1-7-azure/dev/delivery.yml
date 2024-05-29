@@ -10,7 +10,6 @@ metadata:
     app.kubernetes.io/name: server-java-web-app-1-7-azure
     app.kubernetes.io/part-of: server-java-web-app-1-7-azure
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
-    apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/component: run
     carto.run/workload-name: server-java-web-app-1-7-azure
@@ -21,7 +20,6 @@ spec:
       app.kubernetes.io/name: server-java-web-app-1-7-azure
       app.kubernetes.io/part-of: server-java-web-app-1-7-azure
       apps.tanzu.vmware.com/auto-configure-actuators: "true"
-      apps.tanzu.vmware.com/has-tests: "true"
       apps.tanzu.vmware.com/workload-type: server
       carto.run/workload-name: server-java-web-app-1-7-azure
       conventions.carto.run/framework: spring-boot
@@ -40,6 +38,7 @@ spec:
         conventions.carto.run/applied-conventions: |-
           spring-boot-convention/auto-configure-actuators-check
           spring-boot-convention/is-native-app-check
+          spring-boot-convention/is-prometheus-enabled-check
           spring-boot-convention/spring-boot
           spring-boot-convention/spring-boot-graceful-shutdown
           spring-boot-convention/spring-boot-web
@@ -54,7 +53,6 @@ spec:
         app.kubernetes.io/name: server-java-web-app-1-7-azure
         app.kubernetes.io/part-of: server-java-web-app-1-7-azure
         apps.tanzu.vmware.com/auto-configure-actuators: "true"
-        apps.tanzu.vmware.com/has-tests: "true"
         apps.tanzu.vmware.com/workload-type: server
         carto.run/workload-name: server-java-web-app-1-7-azure
         conventions.carto.run/framework: spring-boot
@@ -68,7 +66,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: cxscssa.azurecr.io/tap-build/workloads/server-java-web-app-1-7-azure-mae@sha256:9d7e22d2ab7d1f25ad4b7d509cff5348923e399257da8e5e65d8dcb27a79b583
+        image: cxscssa.azurecr.io/tap-build/workloads/server-java-web-app-1-7-azure-mae@sha256:50afd41f5dcc3bd9f5cfcdb08a81132c4b9dda2d12885a882c2892b1ad6de7da
         livenessProbe:
           httpGet:
             path: /livez
@@ -108,7 +106,6 @@ metadata:
     app.kubernetes.io/name: server-java-web-app-1-7-azure
     app.kubernetes.io/part-of: server-java-web-app-1-7-azure
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
-    apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/component: run
     carto.run/workload-name: server-java-web-app-1-7-azure
@@ -118,7 +115,6 @@ spec:
     app.kubernetes.io/name: server-java-web-app-1-7-azure
     app.kubernetes.io/part-of: server-java-web-app-1-7-azure
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
-    apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: server
     carto.run/workload-name: server-java-web-app-1-7-azure
     conventions.carto.run/framework: spring-boot
