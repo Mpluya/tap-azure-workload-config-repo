@@ -1,0 +1,70 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: greeter-source-canary-sample-package.dev2.cssa.vmware.com.20240604131148.0.0
+spec:
+  refName: greeter-source-canary-sample-package.dev2.cssa.vmware.com
+  version: 20240604131148.0.0
+  releaseNotes: |
+    Release v20240604131148.0.0 of package greeter-source-canary-sample-package.dev2.cssa.vmware.com
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: cxscssa.azurecr.io/tap-build/workloads/greeter-source-canary-sample-package-dev2-bundle@sha256:4ec680a358d07034c6b2baa7f887b29c05f08c546facbbf467911d6f62db9557
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
+  valuesSchema:
+    openAPIv3:
+      type: object
+      additionalProperties: false
+      properties:
+        workload_name:
+          title: Workload name
+          type: string
+          default: ""
+        replicas:
+          title: Replicas
+          type: integer
+          default: 1
+        port:
+          title: Port
+          type: integer
+          default: 8080
+        hostname:
+          title: Hostname
+          type: string
+          default: ""
+        cluster_issuer:
+          title: Cluster Issuer
+          type: string
+          default: tap-ingress-selfsigned
+        http_route:
+          type: object
+          additionalProperties: false
+          nullable: true
+          properties:
+            gateways:
+              type: array
+              items:
+                type: object
+                additionalProperties: false
+                properties:
+                  protocol:
+                    type: string
+                    default: ""
+                  name:
+                    type: string
+                    default: ""
+              default:
+              - protocol: https
+                name: default-gateway
+
