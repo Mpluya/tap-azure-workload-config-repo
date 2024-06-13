@@ -1,0 +1,17 @@
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: carvel-workload-kustomize
+  namespace: kustomize-fun
+spec:
+  serviceAccountName: default # ServiceAccount on run cluster with permissions to deploy Package, see "Set up run Cluster Namespaces"
+  packageRef:
+    refName: carvel-workload-kustomize.kustomize-fun.cssa.vmware.com
+    versionSelection:
+      constraints: ">20240613174533.0.0"
+  values:
+  - secretRef:
+      name: ingress-values
+  - secretRef:
+      name: app-values
