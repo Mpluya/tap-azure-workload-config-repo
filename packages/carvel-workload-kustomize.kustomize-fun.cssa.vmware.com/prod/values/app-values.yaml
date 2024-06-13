@@ -7,6 +7,6 @@ metadata:
 stringData:
    values.yaml: |
       ---
-      workload_name: carvel-workload-kustomize-package
+      workload_name: carvel-workload-kustomize
       replicas: 1
       hostname: carvel-workload-kustomize.run-prod.cssa.tapsme.org
