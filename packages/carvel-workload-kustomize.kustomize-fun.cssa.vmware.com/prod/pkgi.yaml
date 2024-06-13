@@ -9,7 +9,7 @@ spec:
   packageRef:
     refName: carvel-workload-kustomize.kustomize-fun.cssa.vmware.com
     versionSelection:
-      constraints: ">20240613174533.0.0"
+      constraints: 20240613174533.0.0
   values:
   - secretRef:
       name: ingress-values
