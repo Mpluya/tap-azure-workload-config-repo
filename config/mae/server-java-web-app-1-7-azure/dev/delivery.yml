@@ -1,3 +1,37 @@
+apiVersion: kapp.k14s.io/v1alpha1
+kind: Config
+rebaseRules:
+- path:
+  - spec
+  - replicas
+  type: copy
+  sources:
+  - existing
+  - new
+  resourceMatchers:
+  - apiGroupKindMatcher:
+      apiGroup: apps
+      kind: Deployment
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: server-java-web-app-1-7-azure
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: server-java-web-app-1-7-azure
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 65
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -10,7 +44,8 @@ metadata:
     app.kubernetes.io/name: server-java-web-app-1-7-azure
     app.kubernetes.io/part-of: server-java-web-app-1-7-azure
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
-    apps.tanzu.vmware.com/workload-type: server
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: git-testing-hpa-server-template
     app.kubernetes.io/component: run
     carto.run/workload-name: server-java-web-app-1-7-azure
 spec:
@@ -20,7 +55,8 @@ spec:
       app.kubernetes.io/name: server-java-web-app-1-7-azure
       app.kubernetes.io/part-of: server-java-web-app-1-7-azure
       apps.tanzu.vmware.com/auto-configure-actuators: "true"
-      apps.tanzu.vmware.com/workload-type: server
+      apps.tanzu.vmware.com/has-tests: "true"
+      apps.tanzu.vmware.com/workload-type: git-testing-hpa-server-template
       carto.run/workload-name: server-java-web-app-1-7-azure
       conventions.carto.run/framework: spring-boot
       tanzu.app.live.view: "true"
@@ -32,7 +68,7 @@ spec:
     metadata:
       annotations:
         apps.tanzu.vmware.com/correlationid: ssh://git@github.com/Mpluya/tanzu-java-web-app-1-7-server?sub_path=/
-        autoscaling.knative.dev/minScale: "1"
+        apps.tanzu.vmware.com/git-sha: e97e0a3b7401fe566efc87bef73e683c5bbadf82
         boot.spring.io/actuator: http://:8081/actuator
         boot.spring.io/version: 3.1.3
         conventions.carto.run/applied-conventions: |-
@@ -53,7 +89,8 @@ spec:
         app.kubernetes.io/name: server-java-web-app-1-7-azure
         app.kubernetes.io/part-of: server-java-web-app-1-7-azure
         apps.tanzu.vmware.com/auto-configure-actuators: "true"
-        apps.tanzu.vmware.com/workload-type: server
+        apps.tanzu.vmware.com/has-tests: "true"
+        apps.tanzu.vmware.com/workload-type: git-testing-hpa-server-template
         carto.run/workload-name: server-java-web-app-1-7-azure
         conventions.carto.run/framework: spring-boot
         tanzu.app.live.view: "true"
@@ -66,7 +103,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: cxscssa.azurecr.io/tap-build/workloads/server-java-web-app-1-7-azure-mae@sha256:50afd41f5dcc3bd9f5cfcdb08a81132c4b9dda2d12885a882c2892b1ad6de7da
+        image: cxscssa.azurecr.io/tap-build/workloads/server-java-web-app-1-7-azure-mae@sha256:3189831b9fc3acd46512138dfd79339bc370ca96facbbbf8ef52444bfa043b6e
         livenessProbe:
           httpGet:
             path: /livez
@@ -106,7 +143,8 @@ metadata:
     app.kubernetes.io/name: server-java-web-app-1-7-azure
     app.kubernetes.io/part-of: server-java-web-app-1-7-azure
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
-    apps.tanzu.vmware.com/workload-type: server
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: git-testing-hpa-server-template
     app.kubernetes.io/component: run
     carto.run/workload-name: server-java-web-app-1-7-azure
 spec:
@@ -115,7 +153,8 @@ spec:
     app.kubernetes.io/name: server-java-web-app-1-7-azure
     app.kubernetes.io/part-of: server-java-web-app-1-7-azure
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
-    apps.tanzu.vmware.com/workload-type: server
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: git-testing-hpa-server-template
     carto.run/workload-name: server-java-web-app-1-7-azure
     conventions.carto.run/framework: spring-boot
     tanzu.app.live.view: "true"
