@@ -1,7 +1,7 @@
 apiVersion: kapp.k14s.io/v1alpha1
 kind: Config
 additionalLabels:
-  gitsha: apps.tanzu.vmware.com/correlationid
+  gitsha: apps.tanzu.vmware.com/correlationidapps.tanzu.vmware.com/git-shaboot.spring.io/actuatorboot.spring.io/versionconventions.carto.run/applied-conventionsdeveloper.conventions/target-containers
 rebaseRules:
 - path:
   - spec
