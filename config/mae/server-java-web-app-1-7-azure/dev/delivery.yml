@@ -1,7 +1,7 @@
 apiVersion: kapp.k14s.io/v1alpha1
 kind: Config
 additionalLabels:
-  gitsha: apps.tanzu.vmware.com/git-sha
+  gitsha: apps.tanzu.vmware.com/correlationid
 rebaseRules:
 - path:
   - spec
