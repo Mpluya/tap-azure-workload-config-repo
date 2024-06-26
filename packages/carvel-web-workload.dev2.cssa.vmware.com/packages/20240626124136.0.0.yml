@@ -1,0 +1,33 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: carvel-web-workload.dev2.cssa.vmware.com.20240626124136.0.0
+spec:
+  refName: carvel-web-workload.dev2.cssa.vmware.com
+  version: 20240626124136.0.0
+  releaseNotes: |
+    Release v20240626124136.0.0 of package carvel-web-workload.dev2.cssa.vmware.com
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: cxscssa.azurecr.io/tap-build/workloads/carvel-web-workload-dev2-bundle@sha256:a558307966475489c1f47ad6c405ded23eb03941e2986d4c84bc69cf6fa9f36a
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
+  valuesSchema:
+    openAPIv3:
+      type: object
+      additionalProperties: false
+      properties:
+        workload_name:
+          type: string
+          default: ""
+
