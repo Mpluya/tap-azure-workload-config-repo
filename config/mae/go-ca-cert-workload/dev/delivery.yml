@@ -1,17 +1,23 @@
-apiVersion: serving.knative.dev/v1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: go-ca-cert-workload
   annotations:
+    kapp.k14s.io/update-strategy: fallback-on-replace
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
-    ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
     kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
   labels:
     app.kubernetes.io/part-of: go-ca-cert-workload
-    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/component: run
     carto.run/workload-name: go-ca-cert-workload
 spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: run
+      app.kubernetes.io/part-of: go-ca-cert-workload
+      apps.tanzu.vmware.com/workload-type: server
+      carto.run/workload-name: go-ca-cert-workload
   template:
     metadata:
       annotations:
@@ -26,12 +32,15 @@ spec:
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: go-ca-cert-workload
-        apps.tanzu.vmware.com/workload-type: web
+        apps.tanzu.vmware.com/workload-type: server
         carto.run/workload-name: go-ca-cert-workload
     spec:
       containers:
-      - image: cxscssa.azurecr.io/tap-build/workloads/go-ca-cert-workload-mae@sha256:44228c6c200002b1608303b6662f9534b8b9bd723b435d92883c9e89476ea716
+      - image: cxscssa.azurecr.io/tap-build/workloads/go-ca-cert-workload-mae@sha256:f11784b26451180632a7b1004068af1a3cf50df158f2e19066190eea5bd986be
         name: workload
+        ports:
+        - containerPort: 8080
+          protocol: TCP
         resources: {}
         securityContext:
           allowPrivilegeEscalation: false
@@ -43,4 +52,24 @@ spec:
           seccompProfile:
             type: RuntimeDefault
       serviceAccountName: default
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-ca-cert-workload
+  labels:
+    app.kubernetes.io/part-of: go-ca-cert-workload
+    apps.tanzu.vmware.com/workload-type: server
+    app.kubernetes.io/component: run
+    carto.run/workload-name: go-ca-cert-workload
+spec:
+  selector:
+    app.kubernetes.io/component: run
+    app.kubernetes.io/part-of: go-ca-cert-workload
+    apps.tanzu.vmware.com/workload-type: server
+    carto.run/workload-name: go-ca-cert-workload
+  ports:
+  - targetPort: 8080
+    port: 8080
+    name: http
 
