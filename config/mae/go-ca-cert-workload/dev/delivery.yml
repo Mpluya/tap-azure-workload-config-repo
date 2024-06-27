@@ -36,7 +36,7 @@ spec:
         carto.run/workload-name: go-ca-cert-workload
     spec:
       containers:
-      - image: cxscssa.azurecr.io/tap-build/workloads/go-ca-cert-workload-mae@sha256:276fd96102ea330670e245d9031ae8634c883c94be6a3b045273501a46e785fe
+      - image: cxscssa.azurecr.io/tap-build/workloads/go-ca-cert-workload-mae@sha256:4ec4dcac94b56c015b9704bcd84384afbc64ddf65b3e0ecd5073c09b6add06bf
         name: workload
         ports:
         - containerPort: 8080
