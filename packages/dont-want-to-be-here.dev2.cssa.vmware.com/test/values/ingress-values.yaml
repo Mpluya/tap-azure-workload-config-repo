@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ingress-values
+  namespace: dev2
+stringData:
+  values.yaml: |
+    ---
+    cluster_issuer: letsencrypt-production
