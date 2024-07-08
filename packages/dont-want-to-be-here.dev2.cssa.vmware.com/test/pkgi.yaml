@@ -9,7 +9,7 @@ spec:
   packageRef:
     refName: dont-want-to-be-here.dev2.cssa.vmware.com
     versionSelection:
-      constraints: ">20240708195106.0.0"
+      constraints: ">=20240708195106.0.0"
   values:
   - secretRef:
       name: ingress-values
