@@ -169,7 +169,7 @@ spec:
   virtualhost:
     fqdn: server-with-sso
     tls:
-      secretName: wildcard-cert
+      secretName: kube-system/wildcard-cert
 ---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
