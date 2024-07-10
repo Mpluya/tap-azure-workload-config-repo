@@ -6,7 +6,7 @@ spec:
   packageRef:
     refName: tanzu-java-statefulset-app.pve.vmware.com
     versionSelection:
-      constraints: 20240710145839.0.0
+      constraints: 20240710150030.0.0
       prereleases: {}
   serviceAccountName: default
   values:
