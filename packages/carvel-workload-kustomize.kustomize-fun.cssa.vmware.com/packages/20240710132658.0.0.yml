@@ -1,0 +1,71 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: carvel-workload-kustomize.kustomize-fun.cssa.vmware.com.20240710132658.0.0
+  labels:
+    app.kubernetes.io/part-of: carvel-workload-kustomize
+spec:
+  refName: carvel-workload-kustomize.kustomize-fun.cssa.vmware.com
+  version: 20240710132658.0.0
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: cxscssa.azurecr.io/tap-build/workloads/carvel-workload-kustomize-kustomize-fun-bundle@sha256:8d8ca0b5497caa2726a5a665eda7a3f07a8c3a5fea15dd01006db3742122a4d1
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
+  valuesSchema:
+    openAPIv3:
+      type: object
+      additionalProperties: false
+      properties:
+        workload_name:
+          title: Workload name
+          type: string
+          default: ""
+          minLength: 1
+        replicas:
+          title: Replicas
+          type: integer
+          default: 1
+        port:
+          title: Port
+          type: integer
+          default: 8080
+        hostname:
+          title: Hostname
+          type: string
+          default: ""
+        cluster_issuer:
+          title: Cluster Issuer
+          type: string
+          default: tap-ingress-selfsigned
+        http_route:
+          type: object
+          additionalProperties: false
+          nullable: true
+          properties:
+            gateways:
+              type: array
+              items:
+                type: object
+                additionalProperties: false
+                properties:
+                  protocol:
+                    type: string
+                    default: ""
+                  name:
+                    type: string
+                    default: ""
+              default:
+              - protocol: https
+                name: default-gateway
+
