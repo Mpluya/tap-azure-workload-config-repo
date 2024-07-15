@@ -54,7 +54,7 @@ spec:
           value: stg
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.health.probes.enabled="true" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: cxscssa.azurecr.io/tap-build/workloads/cook-app-one-jeremy@sha256:2497c4bf9f2dd86de6d41bc60d029c6e56ae5fff5400e1dde3991df275efb390
+        image: cxscssa.azurecr.io/tap-build/workloads/cook-app-one-jeremy@sha256:eb7666190b72fcfb49a7dfabbaeb2c2861ddfc9636b0bdbbb13ebc1030232237
         livenessProbe:
           httpGet:
             path: /livez
