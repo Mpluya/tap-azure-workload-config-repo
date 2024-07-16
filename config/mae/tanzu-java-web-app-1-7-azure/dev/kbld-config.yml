@@ -1,8 +1,0 @@
-apiVersion: kbld.k14s.io/v1alpha1
-kind: Config
-minimumRequiredVersion: 0.35.0
-searchRules:
-- valueMatcher:
-    image: cxscssa.azurecr.io/tap-build/workloads/tanzu-java-web-app-1-7-azure-mae:latest
-  updateStrategy:
-    none: {}
