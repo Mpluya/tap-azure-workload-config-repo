@@ -1,12 +1,12 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: dont-want-to-be-here.dev2.cssa.vmware.com.20240715132206.0.0
+  name: dont-want-to-be-here.dev2.cssa.vmware.com.20240716141533.0.0
   labels:
     app.kubernetes.io/part-of: dont-want-to-be-here
 spec:
   refName: dont-want-to-be-here.dev2.cssa.vmware.com
-  version: 20240715132206.0.0
+  version: 20240716141533.0.0
   template:
     spec:
       fetch:
