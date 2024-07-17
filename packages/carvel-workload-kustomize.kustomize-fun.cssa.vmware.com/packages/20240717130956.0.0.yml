@@ -1,12 +1,12 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: carvel-workload-kustomize.kustomize-fun.cssa.vmware.com.20240716141603.0.0
+  name: carvel-workload-kustomize.kustomize-fun.cssa.vmware.com.20240717130956.0.0
   labels:
     app.kubernetes.io/part-of: carvel-workload-kustomize
 spec:
   refName: carvel-workload-kustomize.kustomize-fun.cssa.vmware.com
-  version: 20240716141603.0.0
+  version: 20240717130956.0.0
   template:
     spec:
       fetch:
