@@ -1,0 +1,14 @@
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: friday-sre-package.bobbyhana.cssa.vmware.com-pkgi
+spec:
+  packageRef:
+    refName: friday-sre-package.bobbyhana.cssa.vmware.com
+    versionSelection:
+      constraints: 20240718125737.0.0
+      prereleases: {}
+  serviceAccountName: default
+  values:
+  - secretRef:
+      name: friday-sre-app
