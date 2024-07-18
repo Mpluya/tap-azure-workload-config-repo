@@ -6,6 +6,6 @@ metadata:
 stringData:
   values.yml: |
     ---
-    workload_name: friday-sre-app
+    workload_name: friday-sre-package
     replicas: 1
-    hostname: friday-sre-app.bobbyhana.run.cssa.tapsme.org
+    hostname: friday-sre-package.bobbyhana.run.cssa.tapsme.org
