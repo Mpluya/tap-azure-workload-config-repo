@@ -1,12 +1,12 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: carvel-web-workload.dev2.cssa.vmware.com.20240717131019.0.0
+  name: carvel-web-workload.dev2.cssa.vmware.com.20240718125746.0.0
   labels:
     app.kubernetes.io/part-of: carvel-web-workload
 spec:
   refName: carvel-web-workload.dev2.cssa.vmware.com
-  version: 20240717131019.0.0
+  version: 20240718125746.0.0
   template:
     spec:
       fetch:
