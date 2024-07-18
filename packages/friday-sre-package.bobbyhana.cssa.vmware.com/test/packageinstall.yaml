@@ -11,4 +11,4 @@ spec:
   serviceAccountName: default
   values:
   - secretRef:
-      name: friday-sre-app
+      name: friday-sre-package-values
