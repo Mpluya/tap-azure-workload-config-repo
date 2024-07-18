@@ -8,4 +8,3 @@ stringData:
     ---
     workload_name: friday-sre-app
     replicas: 1
-    hostname: friday-sre-app.bobbyhana.run.cssa.tapsme.org
