@@ -10,4 +10,4 @@ stringData:
     replicas: 4
     pdb:
       enabled: true
-    hostname: friday-sre-app.bobbyhana.run.cssa.tapsme.org
+    hostname: friday-sre-app.bobbyhana.run-prod.cssa.tapsme.org

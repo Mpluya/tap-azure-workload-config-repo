@@ -6,7 +6,7 @@ spec:
   packageRef:
     refName: friday-sre-package.bobbyhana.cssa.vmware.com
     versionSelection:
-      constraints: 20240718125737.0.0
+      constraints: 20240718172717.0.0
       prereleases: {}
   serviceAccountName: default
   values:
