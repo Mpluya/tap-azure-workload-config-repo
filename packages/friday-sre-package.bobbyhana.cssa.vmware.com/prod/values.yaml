@@ -7,7 +7,7 @@ stringData:
   values.yml: |
     ---
     workload_name: friday-sre-package
-    replicas: 6
+    replicas: 7
     pdb:
       enabled: true
     hostname: friday-sre-package.bobbyhana.run-prod.cssa.tapsme.org
