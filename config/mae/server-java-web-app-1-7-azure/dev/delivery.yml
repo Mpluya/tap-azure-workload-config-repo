@@ -136,6 +136,10 @@ spec:
             port: 8080
             scheme: HTTP
       serviceAccountName: default
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: ""
+        whenUnsatisfiable: ""
 ---
 apiVersion: v1
 kind: Service
