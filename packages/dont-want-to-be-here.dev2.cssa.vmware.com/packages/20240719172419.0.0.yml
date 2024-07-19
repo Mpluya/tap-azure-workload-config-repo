@@ -1,17 +1,17 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: dont-want-to-be-here.dev2.cssa.vmware.com.20240719164425.0.0
+  name: dont-want-to-be-here.dev2.cssa.vmware.com.20240719172419.0.0
   labels:
     app.kubernetes.io/part-of: dont-want-to-be-here
 spec:
   refName: dont-want-to-be-here.dev2.cssa.vmware.com
-  version: 20240719164425.0.0
+  version: 20240719172419.0.0
   template:
     spec:
       fetch:
       - imgpkgBundle:
-          image: cxscssa.azurecr.io/tap-build/workloads/dont-want-to-be-here-dev2-bundle@sha256:ba57bde88c276506e72c355458edf5294e79898a524d615dfb219bdf89ba6e38
+          image: cxscssa.azurecr.io/tap-build/workloads/dont-want-to-be-here-dev2-bundle@sha256:ef7e730c2c7a2d3857b3d3107122ab4d732c1bd7315c476393f54e3fd00df2fa
       template:
       - ytt:
           paths:
