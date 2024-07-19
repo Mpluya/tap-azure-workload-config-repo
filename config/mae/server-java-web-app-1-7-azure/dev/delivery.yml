@@ -136,19 +136,6 @@ spec:
             port: 8080
             scheme: HTTP
       serviceAccountName: default
-      topologySpreadConstraints:
-      - labelSelector:
-          matchLabels:
-            app.kubernetes.io/component: run
-            app.kubernetes.io/name: server-java-web-app-1-7-azure
-            app.kubernetes.io/part-of: server-java-web-app-1-7-azure
-            apps.tanzu.vmware.com/auto-configure-actuators: "true"
-            apps.tanzu.vmware.com/has-tests: "true"
-            apps.tanzu.vmware.com/workload-type: server-with-git-annotation
-            carto.run/workload-name: server-java-web-app-1-7-azure
-        maxSkew: 1
-        topologyKey: topology.kubernetes.io/zone
-        whenUnsatisfiable: ScheduleAnyway
 ---
 apiVersion: v1
 kind: Service
