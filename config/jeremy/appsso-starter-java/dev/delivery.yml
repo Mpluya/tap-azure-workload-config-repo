@@ -58,7 +58,14 @@ spec:
             type: RuntimeDefault
       serviceAccountName: default
       topologySpreadConstraints:
-      - maxSkew: 1
+      - labelSelector:
+          matchLabels:
+            app.kubernetes.io/component: run
+            app.kubernetes.io/part-of: appsso-starter-java
+            apps.tanzu.vmware.com/workload-type: web
+            autoscaling.knative.dev/min-scale: "1"
+            carto.run/workload-name: appsso-starter-java
+        maxSkew: 1
         topologyKey: topology.kubernetes.io/zone
         whenUnsatisfiable: ScheduleAnyway
 
