@@ -4,6 +4,8 @@ kind: PackageInstall
 metadata:
   name: dont-want-to-be-here
   namespace: dev2
+  labels:
+    app.kubernetes.io/part-of: dont-want-to-be-here
 spec:
   serviceAccountName: default # ServiceAccount on run cluster with permissions to deploy Package, see "Set up run Cluster Namespaces"
   packageRef:
