@@ -52,6 +52,10 @@ spec:
           seccompProfile:
             type: RuntimeDefault
       serviceAccountName: default
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: ""
+        whenUnsatisfiable: ""
 ---
 apiVersion: v1
 kind: Service
