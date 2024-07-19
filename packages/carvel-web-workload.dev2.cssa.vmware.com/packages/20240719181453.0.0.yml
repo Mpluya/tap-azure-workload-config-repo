@@ -1,17 +1,17 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: carvel-web-workload.dev2.cssa.vmware.com.20240719172548.0.0
+  name: carvel-web-workload.dev2.cssa.vmware.com.20240719181453.0.0
   labels:
     app.kubernetes.io/part-of: carvel-web-workload
 spec:
   refName: carvel-web-workload.dev2.cssa.vmware.com
-  version: 20240719172548.0.0
+  version: 20240719181453.0.0
   template:
     spec:
       fetch:
       - imgpkgBundle:
-          image: cxscssa.azurecr.io/tap-build/workloads/carvel-web-workload-dev2-bundle@sha256:09906b72f908139a8191212112ee6d19fdc9485160c29bdc79ee42e2c3dbb003
+          image: cxscssa.azurecr.io/tap-build/workloads/carvel-web-workload-dev2-bundle@sha256:e228cd8ef62209e62f6c4cd40118bb2ed45ecd1ae3dc3789bf7ac55913e1bd29
       template:
       - ytt:
           paths:
