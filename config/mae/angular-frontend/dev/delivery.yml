@@ -48,6 +48,6 @@ spec:
       serviceAccountName: default
       topologySpreadConstraints:
       - maxSkew: 1
-        topologyKey: ""
-        whenUnsatisfiable: ""
+        topologyKey: topology.kubernetes.io/zone
+        whenUnsatisfiable: ScheduleAnyway
 
