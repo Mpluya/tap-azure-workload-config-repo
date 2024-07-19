@@ -53,7 +53,13 @@ spec:
             type: RuntimeDefault
       serviceAccountName: default
       topologySpreadConstraints:
-      - maxSkew: 1
+      - labelSelector:
+          matchLabels:
+            app.kubernetes.io/component: run
+            app.kubernetes.io/part-of: go-ca-cert-workload
+            apps.tanzu.vmware.com/workload-type: server
+            carto.run/workload-name: go-ca-cert-workload
+        maxSkew: 1
         topologyKey: topology.kubernetes.io/zone
         whenUnsatisfiable: ScheduleAnyway
 ---
