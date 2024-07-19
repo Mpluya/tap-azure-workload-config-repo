@@ -113,18 +113,6 @@ spec:
             port: 8080
             scheme: HTTP
       serviceAccountName: default
-      topologySpreadConstraints:
-      - labelSelector:
-          matchLabels:
-            app.kubernetes.io/component: run
-            app.kubernetes.io/part-of: server-with-sso
-            apps.tanzu.vmware.com/auto-configure-actuators: "true"
-            apps.tanzu.vmware.com/has-tests: "true"
-            apps.tanzu.vmware.com/workload-type: server-with-sso
-            carto.run/workload-name: server-with-sso
-        maxSkew: 1
-        topologyKey: topology.kubernetes.io/zone
-        whenUnsatisfiable: ScheduleAnyway
 ---
 apiVersion: v1
 kind: Service
