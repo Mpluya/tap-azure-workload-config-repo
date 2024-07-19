@@ -86,7 +86,13 @@ spec:
             scheme: HTTP
       serviceAccountName: default
       topologySpreadConstraints:
-      - maxSkew: 1
+      - labelSelector:
+          matchLabels:
+            app.kubernetes.io/component: run
+            app.kubernetes.io/part-of: cook-app-one
+            apps.tanzu.vmware.com/workload-type: web
+            carto.run/workload-name: cook-app-one
+        maxSkew: 1
         topologyKey: topology.kubernetes.io/zone
         whenUnsatisfiable: ScheduleAnyway
 
