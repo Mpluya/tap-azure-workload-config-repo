@@ -1,17 +1,17 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: petclinic-image-package.mae.cssa.vmware.com.20240719172436.0.0
+  name: petclinic-image-package.mae.cssa.vmware.com.20240719181546.0.0
   labels:
     app.kubernetes.io/part-of: petclinic-image-package
 spec:
   refName: petclinic-image-package.mae.cssa.vmware.com
-  version: 20240719172436.0.0
+  version: 20240719181546.0.0
   template:
     spec:
       fetch:
       - imgpkgBundle:
-          image: cxscssa.azurecr.io/tap-build/workloads/petclinic-image-package-mae-bundle@sha256:fa6e48f0999f4513ec4150f4e97ea409f7baff98a6b4ca889dd9293023383251
+          image: cxscssa.azurecr.io/tap-build/workloads/petclinic-image-package-mae-bundle@sha256:51ead760dfc39094379368f3af9df3c7064de3a52b01ce3f00dd60195d117792
       template:
       - ytt:
           paths:
