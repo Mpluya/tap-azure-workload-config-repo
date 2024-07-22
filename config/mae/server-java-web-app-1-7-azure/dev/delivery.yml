@@ -135,20 +135,13 @@ spec:
             path: /readyz
             port: 8080
             scheme: HTTP
+      initContainers:
+      - command:
+        - go help
+        image: index.docker.io/library/gradle@sha256:509edad9a55d8435833479f23a1bf6bf3541e8be00ad59550f5333828770f6b0
+        name: bro
+        resources: {}
       serviceAccountName: default
-      topologySpreadConstraints:
-      - labelSelector:
-          matchLabels:
-            app.kubernetes.io/component: run
-            app.kubernetes.io/name: server-java-web-app-1-7-azure
-            app.kubernetes.io/part-of: server-java-web-app-1-7-azure
-            apps.tanzu.vmware.com/auto-configure-actuators: "true"
-            apps.tanzu.vmware.com/has-tests: "true"
-            apps.tanzu.vmware.com/workload-type: server-with-git-annotation
-            carto.run/workload-name: server-java-web-app-1-7-azure
-        maxSkew: 1
-        topologyKey: topology.kubernetes.io/zone
-        whenUnsatisfiable: ScheduleAnyway
 ---
 apiVersion: v1
 kind: Service
