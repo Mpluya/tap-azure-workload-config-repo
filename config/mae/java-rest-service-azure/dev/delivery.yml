@@ -88,17 +88,4 @@ spec:
             port: 8080
             scheme: HTTP
       serviceAccountName: default
-      topologySpreadConstraints:
-      - labelSelector:
-          matchLabels:
-            apis.apps.tanzu.vmware.com/register-api: "true"
-            app.kubernetes.io/component: run
-            app.kubernetes.io/part-of: java-rest-service-azure
-            apps.tanzu.vmware.com/auto-configure-actuators: "true"
-            apps.tanzu.vmware.com/workload-type: web
-            backstage.io/kubernetes-id: customer-profile
-            carto.run/workload-name: java-rest-service-azure
-        maxSkew: 1
-        topologyKey: topology.kubernetes.io/zone
-        whenUnsatisfiable: ScheduleAnyway
 
