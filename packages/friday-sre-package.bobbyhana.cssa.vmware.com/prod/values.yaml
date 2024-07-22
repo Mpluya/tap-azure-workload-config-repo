@@ -12,3 +12,5 @@ stringData:
       enabled: true
     hostname: friday-sre-package.bobbyhana.run-prod.cssa.tapsme.org
     cluster_issuer: letsencrypt-production
+    hpa:
+      enabled: true
