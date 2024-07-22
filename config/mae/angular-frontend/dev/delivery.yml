@@ -46,4 +46,14 @@ spec:
           seccompProfile:
             type: RuntimeDefault
       serviceAccountName: default
+      topologySpreadConstraints:
+      - labelSelector:
+          matchLabels:
+            app.kubernetes.io/component: run
+            app.kubernetes.io/part-of: angular-frontend
+            apps.tanzu.vmware.com/workload-type: web
+            carto.run/workload-name: angular-frontend
+        maxSkew: 1
+        topologyKey: topology.kubernetes.io/zone
+        whenUnsatisfiable: ScheduleAnyway
 
