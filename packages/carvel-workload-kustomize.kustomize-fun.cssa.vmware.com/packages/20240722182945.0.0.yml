@@ -1,17 +1,17 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: carvel-workload-kustomize.kustomize-fun.cssa.vmware.com.20240722130403.0.0
+  name: carvel-workload-kustomize.kustomize-fun.cssa.vmware.com.20240722182945.0.0
   labels:
     app.kubernetes.io/part-of: carvel-workload-kustomize
 spec:
   refName: carvel-workload-kustomize.kustomize-fun.cssa.vmware.com
-  version: 20240722130403.0.0
+  version: 20240722182945.0.0
   template:
     spec:
       fetch:
       - imgpkgBundle:
-          image: cxscssa.azurecr.io/tap-build/workloads/carvel-workload-kustomize-kustomize-fun-bundle@sha256:8d8ca0b5497caa2726a5a665eda7a3f07a8c3a5fea15dd01006db3742122a4d1
+          image: cxscssa.azurecr.io/tap-build/workloads/carvel-workload-kustomize-kustomize-fun-bundle@sha256:7d2bbe1e52f6c0b66f81e18660b5505ce97cbba608d7da46e67b15171a3398f2
       template:
       - ytt:
           paths:
