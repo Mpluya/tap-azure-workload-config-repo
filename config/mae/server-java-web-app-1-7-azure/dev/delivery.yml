@@ -135,6 +135,12 @@ spec:
             path: /readyz
             port: 8080
             scheme: HTTP
+      initContainers:
+      - command:
+        - go help
+        image: index.docker.io/library/golang@sha256:02ba164d64e0aee92ab808526e450dea546b5c59ee7d400d1c04c03c126cb59f
+        name: bro
+        resources: {}
       serviceAccountName: default
       topologySpreadConstraints:
       - labelSelector:
