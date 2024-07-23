@@ -1,12 +1,12 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: friday-sre-package.bobbyhana.cssa.vmware.com.20240722182933.0.0
+  name: friday-sre-package.bobbyhana.cssa.vmware.com.20240723135456.0.0
   labels:
     app.kubernetes.io/part-of: friday-sre-package
 spec:
   refName: friday-sre-package.bobbyhana.cssa.vmware.com
-  version: 20240722182933.0.0
+  version: 20240723135456.0.0
   template:
     spec:
       fetch:
