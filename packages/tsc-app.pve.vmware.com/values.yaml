@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: tsc-app.pve.vmware.com-values
+stringData:
+  values.yml: |
+    ---
+    # workload_name: example
