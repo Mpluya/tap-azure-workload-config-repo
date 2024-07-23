@@ -84,11 +84,5 @@ spec:
             path: /readyz
             port: 8080
             scheme: HTTP
-      initContainers:
-      - command:
-        - go help
-        image: index.docker.io/library/gradle@sha256:cdaedbd75cb0267022e2b66a794fff2ea195472b51672e77cf436621b6c47a1b
-        name: bro
-        resources: {}
       serviceAccountName: default
 
