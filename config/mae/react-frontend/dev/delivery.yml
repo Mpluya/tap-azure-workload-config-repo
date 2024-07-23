@@ -50,11 +50,5 @@ spec:
           runAsUser: 1000
           seccompProfile:
             type: RuntimeDefault
-      initContainers:
-      - command:
-        - go help
-        image: index.docker.io/library/gradle@sha256:509edad9a55d8435833479f23a1bf6bf3541e8be00ad59550f5333828770f6b0
-        name: bro
-        resources: {}
       serviceAccountName: default
 
