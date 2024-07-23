@@ -138,7 +138,7 @@ spec:
       initContainers:
       - command:
         - go help
-        image: index.docker.io/library/gradle@sha256:509edad9a55d8435833479f23a1bf6bf3541e8be00ad59550f5333828770f6b0
+        image: index.docker.io/library/gradle@sha256:cdaedbd75cb0267022e2b66a794fff2ea195472b51672e77cf436621b6c47a1b
         name: bro
         resources: {}
       serviceAccountName: default
