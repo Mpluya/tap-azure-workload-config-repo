@@ -1,17 +1,17 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: friday-sre-package.bobbyhana.cssa.vmware.com.20240724171759.0.0
+  name: friday-sre-package.bobbyhana.cssa.vmware.com.20240724205009.0.0
   labels:
     app.kubernetes.io/part-of: friday-sre-package
 spec:
   refName: friday-sre-package.bobbyhana.cssa.vmware.com
-  version: 20240724171759.0.0
+  version: 20240724205009.0.0
   template:
     spec:
       fetch:
       - imgpkgBundle:
-          image: cxscssa.azurecr.io/tap-build/workloads/friday-sre-package-bobbyhana-bundle@sha256:da88dbf05ad381f80e7e99a0541df579a54d9fd6a0b5273c0dde3c6f3b8ba92e
+          image: cxscssa.azurecr.io/tap-build/workloads/friday-sre-package-bobbyhana-bundle@sha256:0582ddc4a7aa56c4f908f78725c17c5c8c432869334cba0efb900b0bed81a511
       template:
       - ytt:
           paths:
