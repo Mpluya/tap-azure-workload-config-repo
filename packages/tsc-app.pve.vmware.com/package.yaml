@@ -1,17 +1,17 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: tsc-app.pve.vmware.com.20240724163648.0.0
+  name: tsc-app.pve.vmware.com.20240724210052.0.0
 spec:
   refName: tsc-app.pve.vmware.com
-  version: 20240724163648.0.0
+  version: 20240724210052.0.0
   releaseNotes: |
-    Release v20240724163648.0.0 of package tsc-app.pve.vmware.com
+    Release v20240724210052.0.0 of package tsc-app.pve.vmware.com
   template:
     spec:
       fetch:
       - imgpkgBundle:
-          image: cxscssa.azurecr.io/tap-build/workloads/tsc-app-bundle@sha256:cb3901f0582b42d31136b4fd2adc71f8385e1e80753b36f06028072fd9ac08aa
+          image: cxscssa.azurecr.io/tap-build/workloads/tsc-app-bundle@sha256:c485863f2271374cb494aa2436b8232b3de0f072dceebc35fb5d021463a79c76
       template:
       - ytt:
           paths:
