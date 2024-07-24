@@ -48,7 +48,7 @@ spec:
     metadata:
       annotations:
         apps.tanzu.vmware.com/correlationid: https://github.com/x95castle1/friday-java-web-app?sub_path=/
-        apps.tanzu.vmware.com/git-sha: 3a78a520c6a0ab1dc8704f45e960e4918f8d06b3
+        apps.tanzu.vmware.com/git-sha: 72d12f3778338a1c5e4d239f6e1296f5e9443ffc
         boot.spring.io/actuator: http://:8081/actuator
         boot.spring.io/version: 2.7.18
         conventions.carto.run/applied-conventions: |-
@@ -82,7 +82,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: cxscssa.azurecr.io/tap-build/workloads/server-with-sso-jeremy@sha256:3615ee21682dc7d40592d5737c19bbc6205f20bfd6a4e5ec6b29ee92b4ec2b60
+        image: cxscssa.azurecr.io/tap-build/workloads/server-with-sso-jeremy@sha256:fa06dfb9a924ba3417194364ff49106b9c89f239a99a29928d203f4fd061e157
         livenessProbe:
           httpGet:
             path: /livez
