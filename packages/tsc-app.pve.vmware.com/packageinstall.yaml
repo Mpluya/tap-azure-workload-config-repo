@@ -6,7 +6,7 @@ spec:
   packageRef:
     refName: tsc-app.pve.vmware.com
     versionSelection:
-      constraints: 20240724212256.0.0
+      constraints: 20240725142602.0.0
       prereleases: {}
   serviceAccountName: default
   values:
