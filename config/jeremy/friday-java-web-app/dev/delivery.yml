@@ -21,7 +21,7 @@ spec:
           "boot.spring.io/version": "2.7.18",
           "conventions.carto.run/applied-conventions": "spring-boot-convention/auto-configure-actuators-check\nspring-boot-convention/is-native-app-check\nspring-boot-convention/is-prometheus-enabled-check\nspring-boot-convention/spring-boot\nspring-boot-convention/spring-boot-graceful-shutdown\nspring-boot-convention/spring-boot-web\nspring-boot-convention/spring-boot-actuator\nspring-boot-convention/spring-boot-actuator-probes\nspring-boot-convention/app-live-view-appflavour-check\nspring-boot-convention/app-live-view-connector-boot\nspring-boot-convention/app-live-view-appflavours-boot",
           "developer.conventions/target-containers": "workload",
-          "apps.tanzu.vmware.com/git-sha": "f53f10ddc674c4ea5d4c7ba242cdf561f1e9f73c"
+          "apps.tanzu.vmware.com/git-sha": "b48fd3b9ecdd579c1f397fecc1b92be4a4af02d2"
         },
         "labels": {
           "app.kubernetes.io/component": "run",
@@ -47,7 +47,7 @@ spec:
                 "value": "-Dmanagement.endpoint.health.probes.add-additional-paths=\"true\" -Dmanagement.health.probes.enabled=\"true\" -Dserver.port=\"8080\" -Dserver.shutdown.grace-period=\"24s\""
               }
             ],
-            "image": "cxscssa.azurecr.io/tap-build/workloads/friday-java-web-app-jeremy@sha256:c2cada97a66e43d61533b989db30fe47d319d1f0257bb316f2837a1a2dba08b1",
+            "image": "cxscssa.azurecr.io/tap-build/workloads/friday-java-web-app-jeremy@sha256:264799627392dc7703060a1ab46682f0ae4fe74d20a1547b74e02d3596c6b1c0",
             "livenessProbe": {
               "httpGet": {
                 "path": "/livez",
