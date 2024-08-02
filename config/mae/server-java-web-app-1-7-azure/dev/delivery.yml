@@ -180,5 +180,8 @@ spec:
   ports:
   - targetPort: 8080
     port: 8080
-    name: http
+    name: app
+  - targetPort: 9000
+    port: 9000
+    name: mon
 
