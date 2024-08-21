@@ -34,7 +34,7 @@ spec:
     metadata:
       annotations:
         apps.tanzu.vmware.com/correlationid: ssh://git@github.com/Mpluya/tanzu-java-web-app-1-7-server?sub_path=/
-        apps.tanzu.vmware.com/git-sha: nudge
+        apps.tanzu.vmware.com/git-sha: nudgepoo
         boot.spring.io/actuator: http://:8081/actuator
         boot.spring.io/version: 3.1.3
         conventions.carto.run/applied-conventions: |-
