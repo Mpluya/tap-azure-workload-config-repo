@@ -18,7 +18,7 @@ spec:
     metadata:
       annotations:
         apps.tanzu.vmware.com/correlationid: https://github.com/x95castle1/friday-java-web-app?sub_path=/
-        apps.tanzu.vmware.com/git-sha: bb7b3c4edbc934c44b2b9232da9c5b41850ab2f3
+        apps.tanzu.vmware.com/git-sha: poo
         autoscaling.knative.dev/minScale: "1"
         boot.spring.io/actuator: http://:8081/actuator
         boot.spring.io/version: 2.7.18
