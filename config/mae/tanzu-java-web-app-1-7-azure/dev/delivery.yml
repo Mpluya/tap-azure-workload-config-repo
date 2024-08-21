@@ -14,65 +14,88 @@ metadata:
     app.kubernetes.io/component: run
     carto.run/workload-name: tanzu-java-web-app-1-7-azure
 spec:
-  template:
-    metadata:
-      annotations:
-        apps.tanzu.vmware.com/correlationid: ssh://git@github.com/Mpluya/tanzu-java-web-app-1.7?sub_path=/
-        apps.tanzu.vmware.com/git-sha: poopoo
-        autoscaling.knative.dev/minScale: "1"
-        boot.spring.io/actuator: http://:8081/actuator
-        boot.spring.io/version: 3.1.3
-        conventions.carto.run/applied-conventions: |-
-          appliveview-sample/app-live-view-appflavour-check
-          spring-boot-convention/auto-configure-actuators-check
-          spring-boot-convention/spring-boot
-          spring-boot-convention/spring-boot-graceful-shutdown
-          spring-boot-convention/spring-boot-web
-          spring-boot-convention/spring-boot-actuator
-          spring-boot-convention/spring-boot-actuator-probes
-          spring-boot-convention/app-live-view-appflavour-check
-          spring-boot-convention/app-live-view-connector-boot
-          spring-boot-convention/app-live-view-appflavours-boot
-        developer.conventions/target-containers: workload
-      labels:
-        app.kubernetes.io/component: run
-        app.kubernetes.io/part-of: tanzu-java-web-app-1-7-azure
-        apps.tanzu.vmware.com/auto-configure-actuators: "true"
-        apps.tanzu.vmware.com/has-tests: "true"
-        apps.tanzu.vmware.com/workload-type: web
-        carto.run/workload-name: tanzu-java-web-app-1-7-azure
-        conventions.carto.run/framework: spring-boot
-        tanzu.app.live.view: "true"
-        tanzu.app.live.view.application.actuator.path: actuator
-        tanzu.app.live.view.application.actuator.port: "8081"
-        tanzu.app.live.view.application.flavours: spring-boot
-        tanzu.app.live.view.application.name: tanzu-java-web-app-1-7-azure
-    spec:
-      containers:
-      - env:
-        - name: JAVA_TOOL_OPTIONS
-          value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: cxscssa.azurecr.io/tap-build/workloads/tanzu-java-web-app-1-7-azure-mae@sha256:4403f52a4cbb79b133c38f8746198806be982c9a7ae86d84c7f42fbf692aa01d
-        livenessProbe:
-          httpGet:
-            path: /livez
-            port: 8080
-            scheme: HTTP
-        name: workload
-        ports:
-        - containerPort: 8080
-          protocol: TCP
-        readinessProbe:
-          httpGet:
-            path: /readyz
-            port: 8080
-            scheme: HTTP
-        resources: {}
-        securityContext:
-          runAsUser: 1000
-        startupProbe:
-          httpGet:
-            path: /readyz
-            port: 8080
-            scheme: HTTP
-      serviceAccountName: default
+  template: |-
+    {
+      "metadata": {
+        "annotations": {
+          "apps.tanzu.vmware.com/correlationid": "ssh://git@github.com/Mpluya/tanzu-java-web-app-1.7?sub_path=/",
+          "autoscaling.knative.dev/minScale": "1",
+          "boot.spring.io/actuator": "http://:8081/actuator",
+          "boot.spring.io/version": "3.1.3",
+          "conventions.carto.run/applied-conventions": "spring-boot-convention/auto-configure-actuators-check\nspring-boot-convention/is-native-app-check\nspring-boot-convention/is-prometheus-enabled-check\nspring-boot-convention/spring-boot\nspring-boot-convention/spring-boot-graceful-shutdown\nspring-boot-convention/spring-boot-web\nspring-boot-convention/spring-boot-actuator\nspring-boot-convention/spring-boot-actuator-probes\nspring-boot-convention/app-live-view-appflavour-check\nspring-boot-convention/app-live-view-connector-boot\nspring-boot-convention/app-live-view-appflavours-boot",
+          "developer.conventions/target-containers": "workload",
+          "apps.tanzu.vmware.com/git-sha": "bb7b3c4edbc934c44b2b9232da9c5b41850ab2f3"
+        },
+        "labels": {
+          "app.kubernetes.io/component": "run",
+          "app.kubernetes.io/part-of": "tanzu-java-web-app-1-7-azure",
+          "apps.tanzu.vmware.com/auto-configure-actuators": "true",
+          "apps.tanzu.vmware.com/has-tests": "true",
+          "apps.tanzu.vmware.com/workload-type": "web",
+          "carto.run/workload-name": "tanzu-java-web-app-1-7-azure",
+          "conventions.carto.run/framework": "spring-boot",
+          "tanzu.app.live.view": "true",
+          "tanzu.app.live.view.application.actuator.path": "actuator",
+          "tanzu.app.live.view.application.actuator.port": "8081",
+          "tanzu.app.live.view.application.flavours": "spring-boot",
+          "tanzu.app.live.view.application.name": "tanzu-java-web-app-1-7-azure"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "JAVA_TOOL_OPTIONS",
+                "value": "-Dmanagement.endpoint.health.probes.add-additional-paths=\"true\" -Dmanagement.endpoint.health.show-details=\"always\" -Dmanagement.endpoints.web.base-path=\"/actuator\" -Dmanagement.endpoints.web.exposure.include=\"*\" -Dmanagement.health.probes.enabled=\"true\" -Dmanagement.server.port=\"8081\" -Dserver.port=\"8080\" -Dserver.shutdown.grace-period=\"24s\""
+              }
+            ],
+            "image": "cxscssa.azurecr.io/tap-build/workloads/tanzu-java-web-app-1-7-azure-mae@sha256:b4c2465e1858b8b9ab1f09bab6abf5ddf6c8c3c9e968623e7a5c1df97ff9733f",
+            "livenessProbe": {
+              "httpGet": {
+                "path": "/livez",
+                "port": 8080,
+                "scheme": "HTTP"
+              }
+            },
+            "name": "workload",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "readinessProbe": {
+              "httpGet": {
+                "path": "/readyz",
+                "port": 8080,
+                "scheme": "HTTP"
+              }
+            },
+            "resources": {},
+            "securityContext": {
+              "allowPrivilegeEscalation": false,
+              "capabilities": {
+                "drop": [
+                  "ALL"
+                ]
+              },
+              "runAsNonRoot": true,
+              "runAsUser": 1000,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            },
+            "startupProbe": {
+              "httpGet": {
+                "path": "/readyz",
+                "port": 8080,
+                "scheme": "HTTP"
+              }
+            }
+          }
+        ],
+        "serviceAccountName": "default"
+      }
+    }
+
