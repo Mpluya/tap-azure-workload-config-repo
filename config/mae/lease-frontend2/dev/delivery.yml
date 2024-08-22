@@ -30,7 +30,7 @@ spec:
         carto.run/workload-name: lease-frontend2
     spec:
       containers:
-      - image: cxscssa.azurecr.io/tap-build/workloads/lease-frontend2-mae@sha256:6aac61c921165c1cf5ed14e2f7e29a531645874c487e3dfa4c7cc0ba6c1e7f43
+      - image: cxscssa.azurecr.io/tap-build/workloads/lease-frontend2-mae@sha256:dab39b73b4e950b121a733a5333fced2434020f2ed1d66ce284df368eaf53dc0
         name: workload
         resources:
           limits:
