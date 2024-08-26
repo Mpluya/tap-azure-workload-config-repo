@@ -34,7 +34,7 @@ spec:
     metadata:
       annotations:
         apps.tanzu.vmware.com/correlationid: ssh://git@github.com/Mpluya/tanzu-java-web-app-1-7-server?sub_path=/
-        apps.tanzu.vmware.com/git-sha: e38c116a4fff7730cfc6cc1989a0909988f30f27
+        apps.tanzu.vmware.com/git-sha: 190db95eb63e233102bdabea962f78d692629d99
         boot.spring.io/actuator: http://:8081/actuator
         boot.spring.io/version: 3.1.3
         conventions.carto.run/applied-conventions: |-
@@ -69,7 +69,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: cxscssa.azurecr.io/tap-build/workloads/server-java-web-app-1-7-azure-mae@sha256:7828a91481d457f63f250cf7a4b2395f991a871a6c3cc3f83985733322eb204b
+        image: cxscssa.azurecr.io/tap-build/workloads/server-java-web-app-1-7-azure-mae@sha256:eb87e78df877093aa6cc676776be378c97a2ef60516e0e82afa611d984c7f9c5
         livenessProbe:
           httpGet:
             path: /livez
