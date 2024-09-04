@@ -50,7 +50,7 @@ spec:
                 "value": "-Dmanagement.endpoint.health.probes.add-additional-paths=\"true\" -Dmanagement.endpoint.health.show-details=\"always\" -Dmanagement.endpoints.web.base-path=\"/actuator\" -Dmanagement.endpoints.web.exposure.include=\"*\" -Dmanagement.health.probes.enabled=\"true\" -Dmanagement.server.port=\"8081\" -Dserver.port=\"8080\" -Dserver.shutdown.grace-period=\"24s\""
               }
             ],
-            "image": "cxscssa.azurecr.io/tap-build/workloads/hello-too-mae@sha256:9af0a1038f32daa2d8f276dca8b8f4ad66a9a95c97f0d5eb42f9af60c72f61ed",
+            "image": "cxscssa.azurecr.io/tap-build/workloads/hello-too-mae@sha256:f93565c5de31673066680fb064d7f0fa4cf99f11681869fbaae2ad3acbc289e6",
             "livenessProbe": {
               "httpGet": {
                 "path": "/livez",
